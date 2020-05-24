@@ -35,7 +35,7 @@ const Bio = () => {
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata
   return (
     <div
       style={{
@@ -56,12 +56,14 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Escrito por <strong>{author.name}</strong>, {author.summary}
-        {` `}
-        <a target="_blank" rel="noreferrer" href={`https://youtube.com/c/${social.youtube}`}>
-          Deberías seguirlo en youtube
-        </a>
+      <p
+        style={{
+          display: `flex`,
+          alignItems: 'center',
+          marginBottom: 0,
+        }}
+      >
+        Escrito por {author.name}, {author.summary}.
       </p>
     </div>
   )
