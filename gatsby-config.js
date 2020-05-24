@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Developero`,
+    subtitle: `Cursos y tutoriales de programación`,
     author: {
       name: `Juan Correa`,
       summary: `autodidacta, curioso y apasionado en el desarrollo de software`,
