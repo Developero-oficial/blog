@@ -1,15 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: `Developero`,
-    subtitle: `Cursos y tutoriales de programación`,
     author: {
       name: `Juan Correa`,
       summary: `autodidacta, curioso y apasionado en el desarrollo de software`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `Cursos y tutoriales de programación`,
+    siteUrl: `https://developero.io`,
     social: {
-      youtube: `developero`,
+      youtube: `https://www.youtube.com/c/developero`,
+      facebook: 'https://www.facebook.com/DeveloperoOficial/',
+      github: 'https://github.com/Developero-oficial'
     },
   },
   plugins: [

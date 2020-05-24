@@ -8,11 +8,11 @@ import { rhythm, scale } from "../utils/typography"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
+  const { title, description, social } = data.site.siteMetadata
   const { previous, next } = pageContext
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={title} description={description} social={social}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -23,6 +23,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             style={{
               marginTop: rhythm(1),
               marginBottom: 0,
+              fontWeight: 'bold',
             }}
           >
             {post.frontmatter.title}
@@ -85,6 +86,11 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
+        social {
+          youtube
+          facebook
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

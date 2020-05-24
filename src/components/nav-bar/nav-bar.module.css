@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container nav ul, .container div ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding-right: 8px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.selected {
+  font-weight: bold;
+}
