@@ -25,6 +25,7 @@ export const pageQuery = graphql`
         social {
           youtube
           facebook
+          github
         }
       }
     }
