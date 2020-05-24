@@ -13,6 +13,7 @@ const Layout = ({ location, title, children }) => {
         style={{
           ...scale(1.5),
           marginBottom: rhythm(1.5),
+          fontWeight: '600',
           marginTop: 0,
         }}
       >
@@ -52,7 +53,7 @@ const Layout = ({ location, title, children }) => {
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
-        maxWidth: rhythm(24),
+        maxWidth: rhythm(40),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
