@@ -48,6 +48,8 @@ const Layout = ({ location, title, description, social, children }) => {
 
       <NavBar social={social} location={location} />
 
+      <hr />
+
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Developero
