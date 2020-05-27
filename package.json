@@ -36,7 +36,13 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "babel-jest": "26.0.1",
+    "babel-preset-gatsby": "0.4.7",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "26.0.1",
+    "prettier": "2.0.5",
+    "prop-types": "15.7.2",
+    "react-test-renderer": "16.13.1"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
@@ -55,6 +61,6 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "jest"
   }
 }
