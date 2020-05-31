@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { rhythm, scale } from "../utils/typography"
-import NavBar from './nav-bar'
+import { rhythm, scale } from "../../utils/typography"
+import { NavBar } from '../nav-bar'
 
 const Layout = ({ location, title, description, social, children }) => {
   const header = (
