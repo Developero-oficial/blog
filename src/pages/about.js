@@ -26,12 +26,12 @@ const AboutPage = ({ data, location }) => {
 
       <div>
         <p>
-          Hola 👋, soy <strong>Juan Correa</strong>, creador de <strong>Developero</strong> 😁.
+          Hola <span role="img">👋</span>, soy <strong>Juan Correa</strong>, creador de <strong>Developero</strong> <span>role="img">😁</span>.
         </p>
 
         <p>
           Soy un <strong>desarrollador de software</strong> experimentado en aplicaciones web con más de 5 años de experiencia.
-          He trabajando en ambientes corporativos así como en startups (startups es lo mejor, en mi opinión) y como freelancer 👨‍💻.
+          He trabajando en ambientes corporativos así como en startups (startups es lo mejor, en mi opinión) y como freelancer <span role="img">👨‍💻</span>.
         </p>
 
         <p>
