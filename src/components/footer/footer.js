@@ -3,23 +3,40 @@ import PropTypes from 'prop-types'
 
 import './footer.module.css'
 
+import { secondaryColor } from '../../utils/theme'
+
 export const Footer = ({ socialLinks, children }) => {
   return (
     <footer>
-      <h3>Redes sociales</h3>
       <ul>
         <li>
-          <a target="_blank" rel="noreferrer" href={socialLinks.youtube} data-testid="link-social-youtube">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={socialLinks.youtube}
+            data-testid="link-social-youtube"
+            style={{ color: secondaryColor }}>
             YouTube
           </a>
         </li>
         <li>
-          <a target="_blank" rel="noreferrer" href={socialLinks.facebook} data-testid="link-social-facebook">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={socialLinks.facebook}
+            data-testid="link-social-facebook"
+            style={{ color: secondaryColor }}>
             Facebook
           </a>
         </li>
         <li>
-          <a target="_blank" rel="noreferrer" href={socialLinks.github} data-testid="link-social-github">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={socialLinks.github}
+            data-testid="link-social-github"
+            style={{ color: secondaryColor }}
+            >
             Github
           </a>
         </li>
