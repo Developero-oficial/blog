@@ -1,6 +1,8 @@
 import Typography from "typography"
 import Wordpress2016 from "typography-theme-wordpress-2016"
 
+import { primaryColor, textColor } from './theme'
+
 Wordpress2016.overrideThemeStyles = () => {
   return {
     'a.gatsby-resp-image-link': {
@@ -8,7 +10,14 @@ Wordpress2016.overrideThemeStyles = () => {
     },
     'a': {
       boxShadow: `none`,
-    }
+      color: primaryColor,
+    },
+    'h1, h2, h3, h4, h5, h6': {
+      color: primaryColor,
+    },
+    'p': {
+      color: textColor,
+    },
   }
 }
 

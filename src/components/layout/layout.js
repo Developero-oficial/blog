@@ -1,40 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import { rhythm, scale } from "../../utils/typography"
+import { rhythm } from "../../utils/typography"
 import { NavBar } from '../nav-bar'
+import { Logo } from '../logo'
+import { Footer } from '../footer'
 
-const Layout = ({ location, title, description, social, children }) => {
-  const header = (
-    <>
-      <h1
-        style={{
-          ...scale(1),
-          fontWeight: '600',
-          marginTop: 0,
-          marginBottom: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-      <h2 style={{
-        marginTop: 0,
-        marginBottom: rhythm(1.5),
-        fontWeight: '600',
-        ...scale(0.2),
-      }}>
-        {description}
-      </h2>
-    </>
-  )
+const Layout = ({ location, social, children }) => {
   return (
     <div
       style={{
@@ -44,16 +15,17 @@ const Layout = ({ location, title, description, social, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <header>{header}</header>
+      <NavBar social={social} location={location}>
+        <Logo />
+      </NavBar>
 
-      <NavBar social={social} location={location} />
-
-      <hr />
+      <hr style={{ margin: 'calc(1.75rem - 1px) 0'}} />
 
       <main>{children}</main>
-      <footer>
+
+      <Footer socialLinks={social}>
         © {new Date().getFullYear()}, Developero
-      </footer>
+      </Footer>
     </div>
   )
 }

@@ -36,11 +36,11 @@ type Data = {
 }
 
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
-  const { title, description, social } = data.site.siteMetadata
+  const { social } = data.site.siteMetadata
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout location={location} title={title} description={description} social={social}>
+    <Layout location={location} social={social}>
       <SEO title="Developero" />
 
       {posts.map(({ node }) => {
@@ -48,7 +48,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         return (
           <article key={node.fields.slug}>
             <header>
-              <h3
+              <h2
                 style={{
                   marginBottom: rhythm(1 / 4),
                 }}
@@ -56,7 +56,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
-              </h3>
+              </h2>
               <small>{node.frontmatter.date}</small>
             </header>
             <section>
