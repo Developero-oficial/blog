@@ -4,9 +4,10 @@ import PropTypes from 'prop-types'
 
 import styles from './nav-bar.module.css'
 
-const NavBar = ({ social, location }) => {
+const NavBar = ({ children, location }) => {
   return (
     <div className={styles.container}>
+      {children}
       <nav>
         <ul>
           <li className={location.pathname === '/' ? styles.selected : ''}>
@@ -21,35 +22,11 @@ const NavBar = ({ social, location }) => {
           </li>
         </ul>
       </nav>
-      <div>
-        <ul>
-          <li>
-            <a target="_blank" rel="noreferrer" href={social.youtube} data-testid="link-social-youtube">
-              YouTube
-            </a>
-          </li>
-          <li>
-            <a target="_blank" rel="noreferrer" href={social.facebook} data-testid="link-social-facebook">
-              Facebook
-            </a>
-          </li>
-          <li>
-            <a target="_blank" rel="noreferrer" href={social.github} data-testid="link-social-github">
-              Github
-            </a>
-          </li>
-        </ul>
-      </div>
     </div>
   )
 }
 
 NavBar.propTypes = {
-  social: PropTypes.shape({
-    youtube: PropTypes.string.isRequired,
-    facebook: PropTypes.string.isRequired,
-    github: PropTypes.string.isRequired,
-  }),
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
