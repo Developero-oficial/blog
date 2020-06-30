@@ -2,10 +2,13 @@ import React from 'react'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import { ThemeProvider } from '@material-ui/core/styles'
 
 import { NavBar } from '../nav-bar'
 import { Logo } from '../logo'
 import { Footer } from '../footer'
+
+import { theme } from '../../utils/theme'
 
 const logoStyles = {
   display: `block`,
@@ -14,25 +17,44 @@ const logoStyles = {
   height: 48,
 }
 
+const navBarLinks = [
+  {
+    path: '/',
+    label: 'Inicio',
+  },
+  {
+    path: '/blog',
+    label: 'Developero Blog',
+  },
+  {
+    path: '/about',
+    label: 'Sobre el autor',
+  },
+]
+
 const Layout = ({ location, social, children }) => {
   return (
     <>
       <CssBaseline />
-      <Container disableGutters>
-        <NavBar social={social} location={location}>
-          <Logo style={logoStyles} />
-        </NavBar>
+      <ThemeProvider theme={theme}>
+        <Container disableGutters>
+          <NavBar
+            location={location}
+            links={navBarLinks}
+            renderLogo={() => <Logo style={logoStyles} />}
+          />
 
-        <main>
-          {children}
-        </main>
+          <main>
+            {children}
+          </main>
 
-        <Footer socialLinks={social}>
-          <Typography>
-            © {new Date().getFullYear()}, Developero
-          </Typography>
-        </Footer>
-      </Container>
+          <Footer socialLinks={social}>
+            <Typography>
+              © {new Date().getFullYear()}, Developero
+            </Typography>
+          </Footer>
+        </Container>
+      </ThemeProvider>
     </>
   )
 }
