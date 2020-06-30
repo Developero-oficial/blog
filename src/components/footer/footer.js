@@ -5,9 +5,9 @@ import './footer.module.css'
 
 import { secondaryColor } from '../../utils/theme'
 
-export const Footer = ({ socialLinks, children }) => {
+export const Footer = ({ socialLinks, children, styles = {} }) => {
   return (
-    <footer>
+    <footer style={styles}>
       <ul>
         <li>
           <a

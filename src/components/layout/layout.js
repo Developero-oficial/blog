@@ -48,7 +48,7 @@ const Layout = ({ location, social, children }) => {
             {children}
           </main>
 
-          <Footer socialLinks={social}>
+          <Footer socialLinks={social} styles={{ marginTop: 32 }}>
             <Typography>
               © {new Date().getFullYear()}, Developero
             </Typography>
