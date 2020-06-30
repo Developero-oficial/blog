@@ -42,9 +42,9 @@ export const Footer = ({ socialLinks, children }) => {
         </li>
       </ul>
 
-      <p>
+      <div>
         {children}
-      </p>
+      </div>
     </footer>
   )
 }

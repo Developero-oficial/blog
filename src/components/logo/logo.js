@@ -5,7 +5,14 @@ import './logo.module.css'
 
 import logo from '../../../static/Logotipo_original.png'
 
-export const Logo = () => {
+const defaultStyles = {
+  display: `block`,
+  margin: `0 auto`,
+  width: 130,
+  height: 130,
+}
+
+export const Logo = ({ style = defaultStyles }) => {
   return (
     <figure>
       <Link
@@ -17,12 +24,7 @@ export const Logo = () => {
           <img
             src={logo}
             alt="Developero"
-            style={{
-              display: `block`,
-              margin: `0 auto`,
-              width: 130,
-              height: 130,
-            }}
+            style={style}
           />
       </Link>
     </figure>
