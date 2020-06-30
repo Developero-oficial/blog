@@ -37,13 +37,12 @@ const Layout = ({ location, social, children }) => {
     <>
       <CssBaseline />
       <ThemeProvider theme={theme}>
-        <Container disableGutters>
-          <NavBar
-            location={location}
-            links={navBarLinks}
-            renderLogo={() => <Logo style={logoStyles} />}
-          />
-
+        <NavBar
+          location={location}
+          links={navBarLinks}
+          renderLogo={() => <Logo style={logoStyles} />}
+        />
+        <Container>
           <main>
             {children}
           </main>
