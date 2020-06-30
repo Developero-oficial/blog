@@ -7,13 +7,19 @@ import { LandingPageContainer } from '../components/landing-page-container'
 
 const technologies = [
   {
-    name: 'Nodejs',
+    name: 'Node js tutorial',
+    description: 'Javascript de lado del servidor!',
+    subDescription: 'Api rest con express, estructura de un proyecto, buenas prácticas y más.'
   },
   {
-    name: 'Reactjs',
+    name: 'React js tutorial',
+    description: 'Librería más popular para desarrollo frontend.',
+    subDescription: 'Ejemplos de apps, Hooks, Redux, llamadas a apis, patrones, estilos y más.'
   },
   {
-    name: 'Php y Msql',
+    name: 'Php y Msql desde cero',
+    description: 'Lenguaje backend más usado en la web',
+    subDescription: 'Programación orientada a objetos, CRUD, Tutorialesy más.'
   },
 ]
 
