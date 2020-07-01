@@ -11,8 +11,6 @@ import Image from "gatsby-image"
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 
-import { rhythm } from "../../utils/typography"
-
 const Bio = ({ date }) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
@@ -45,7 +43,7 @@ const Bio = ({ date }) => {
           fixed={data.avatar.childImageSharp.fixed}
           alt={author.name}
           style={{
-            marginRight: rhythm(1 / 2),
+            marginRight: 16,
             marginBottom: 0,
             minWidth: 50,
             borderRadius: `100%`,

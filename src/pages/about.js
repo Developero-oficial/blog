@@ -35,13 +35,13 @@ const AboutPage = ({ data, location }) => {
             </Typography>
 
             <Typography>
-              - <span role="img" arial-label="muscle">💪</span> Poder ayudar a otros desarrolladores a aprender tecnologías web y así lograr sus metas.
+              <span role="img" aria-label="muscle">💪</span> Poder ayudar a otros desarrolladores a aprender tecnologías web y así lograr sus metas.
             </Typography>
             <Typography>
-              - <span role="img" arial-label="nerd">🤓</span> Aprender más sobre tecnologías.
+              <span role="img" aria-label="nerd">🤓</span> Aprender más sobre tecnologías.
             </Typography>
             <Typography>
-              - <span role="img" arial-label="money-face">🤑</span> Crear un ingreso extra.
+              <span role="img" aria-label="money-face">🤑</span> Crear un ingreso extra.
             </Typography>
           </Grid>
 
