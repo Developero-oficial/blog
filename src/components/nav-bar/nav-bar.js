@@ -1,30 +1,50 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
+import { makeStyles } from '@material-ui/core/styles'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Link from '@material-ui/core/Link'
 import PropTypes from 'prop-types'
 
-import { secondaryColor } from '../../utils/theme'
+const useStyles = makeStyles((theme) => ({
+  toolbar: {
+    paddingBottom: theme.spacing(1),
+    borderBottom: `1px solid ${theme.palette.divider}`,
+    justifyContent: 'space-between',
+    overflowX: 'auto',
+  },
+  toolbarLink: {
+    padding: theme.spacing(1),
+    flexShrink: 0,
+  },
+  toolbarLinkSelected: {
+    color: theme.palette.secondary.main
+  },
+}));
 
-import styles from './nav-bar.module.css'
+const NavBar = ({ renderLogo, location, links }) => {
+  const classes = useStyles()
 
-const NavBar = ({ children, location }) => {
   return (
-    <div className={styles.container}>
-      {children}
-      <nav>
-        <ul>
-          <li className={location.pathname === '/' ? styles.selected : ''}>
-            <Link to="/" data-testid="link-blog" style={{ color: secondaryColor }}>
-              Blog
-            </Link>
-          </li>
-          <li className={location.pathname === '/about' ? styles.selected : ''}>
-            <Link to="/about" data-testid="link-about" style={{ color: secondaryColor }}>
-              Sobre el autor
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <AppBar position="static" color="transparent">
+      <Toolbar component="nav" variant="dense" className={classes.toolbar}>
+          {renderLogo()}
+
+          <div>
+            {
+              links.map(({ path, label}) => (
+                <Link
+                  key={label}
+                  component={GatsbyLink}
+                  to={path}
+                  className={`${classes.toolbarLink} ${location.pathname === path && classes.toolbarLinkSelected}`}>
+                    {label}
+                </Link>
+              ))
+            }
+          </div>
+      </Toolbar>
+    </AppBar>
   )
 }
 
@@ -32,6 +52,11 @@ NavBar.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
+  links: PropTypes.arrayOf(PropTypes.shape({
+    path: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  })).isRequired,
+  renderLogo: PropTypes.func.isRequired,
 }
 
 export default NavBar

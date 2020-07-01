@@ -1,10 +1,9 @@
-// Gatsby supports TypeScript natively!
 import React from "react"
-import { PageProps, Link, graphql } from "gatsby"
+import { PageProps, graphql } from "gatsby"
 
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
-import { rhythm } from "../utils/typography"
+import { BlogContainer } from '../components/blog-container'
 
 type Data = {
   site: {
@@ -40,36 +39,12 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout location={location} social={social}>
+    <>
       <SEO title="Developero" />
-
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h2
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h2>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        )
-      })}
-    </Layout>
+      <Layout location={location} social={social}>
+        <BlogContainer posts={posts} />
+      </Layout>
+    </>
   )
 }
 
