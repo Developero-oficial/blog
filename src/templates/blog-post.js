@@ -1,10 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Typography from '@material-ui/core/Typography'
+import Divider from '@material-ui/core/Divider'
+import Grid from '@material-ui/core/Grid'
 
 import { Bio } from "../components/bio"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -12,70 +14,69 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext
 
   return (
-    <Layout location={location} title={title} description={description} social={social}>
+    <>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
-        <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-              fontWeight: 'bold',
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
+      <Layout location={location} title={title} description={description} social={social}>
+        <Grid container justify="center" spacing={10} style={{ marginTop: 16 }}>
+          <Grid item xs={12} md={8}>
+            <article>
+              <header>
+                <Grid container direction="column" spacing={1}>
+                  <Grid item xs={12}>
+                    <Typography variant="h4" component="h1" color="textPrimary">
+                      {post.frontmatter.title}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Typography variant="h5" component="h2" color="textSecondary" gutterBottom>
+                      {post.frontmatter.description}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Bio date={post.frontmatter.date} />
+                  </Grid>
+                </Grid>
+              </header>
 
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-    </Layout>
+              <Divider style={{ margin: '48px auto'}} />
+
+              <section dangerouslySetInnerHTML={{ __html: post.html }} />
+
+            </article>
+
+            <nav>
+          <ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+            }}
+          >
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </nav>
+          </Grid>
+        </Grid>
+      </Layout>
+    </>
   )
 }
 
