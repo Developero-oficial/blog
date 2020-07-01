@@ -22,7 +22,15 @@ const NotFoundPage = ({ data, location }) => {
           </Grid>
 
           <Grid item xs={12} md={8}>
-            <div><iframe src="https://giphy.com/embed/j6aoUHK5YiJEc" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+            <iframe
+              title="giff"
+              src="https://giphy.com/embed/j6aoUHK5YiJEc"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              class="giphy-embed"
+              allowFullScreen
+            />
           </Grid>
 
           <Grid item xs={12} md={8}>
