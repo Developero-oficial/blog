@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
-  "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "name": "blog",
+  "private": false,
+  "description": "Developero Blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Juan Correa <developero.apps@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/Developero-oficial/blog/issues"
   },
   "dependencies": {
     "@material-ui/core": "4.10.2",
@@ -20,6 +20,7 @@
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-sharp": "^2.6.4",
     "gatsby-remark-copy-linked-files": "^2.3.2",
+    "gatsby-remark-embed-video": "3.0.10",
     "gatsby-remark-images": "^3.3.4",
     "gatsby-remark-prismjs": "^3.5.1",
     "gatsby-remark-responsive-iframe": "^2.4.2",
@@ -42,9 +43,10 @@
     "prop-types": "15.7.2",
     "react-test-renderer": "16.13.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/Developero-oficial/blog",
   "keywords": [
-    "gatsby"
+    "developero",
+    "blog"
   ],
   "license": "MIT",
   "main": "n/a",
