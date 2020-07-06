@@ -41,7 +41,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 </Grid>
               </header>
 
-              <Divider style={{ margin: '48px auto'}} />
+              <Divider style={{ margin: '24px auto'}} />
+
+              <img
+                src={post.frontmatter.coverImage.publicURL}
+                alt="react js tutorial en espanol 2020"
+                style={{ width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+              />
 
               <section dangerouslySetInnerHTML={{ __html: post.html }} />
 
@@ -103,6 +112,14 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        coverImage {
+          publicURL
+          childImageSharp {
+            sizes(maxWidth: 2000) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
   }

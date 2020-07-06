@@ -30,7 +30,7 @@ export const BlogContainer = ({ posts }) => {
         </Typography>
       </Grid>
 
-      <Grid container className={classes.postsContainer}>
+      <Grid container className={classes.postsContainer} spacing={3}>
           {
             posts.map(({ node }) => (
               <Grid item xs={12} md={4} key={node.fields.slug}>
