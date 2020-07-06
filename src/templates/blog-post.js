@@ -41,7 +41,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 </Grid>
               </header>
 
-              <Divider style={{ margin: '48px auto'}} />
+              <Divider style={{ margin: '24px auto'}} />
 
               <section dangerouslySetInnerHTML={{ __html: post.html }} />
 
