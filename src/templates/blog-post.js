@@ -79,33 +79,33 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </Grid>
 
           <Grid item xs={12} md={8}>
-                <nav>
-                  <ul
-                    style={{
-                      display: `flex`,
-                      flexWrap: `wrap`,
-                      justifyContent: `space-between`,
-                      listStyle: `none`,
-                      padding: 0,
-                    }}
-                  >
-                    <li>
-                      {previous && (
-                        <Link to={previous.fields.slug} rel="prev">
-                          ← {previous.frontmatter.title}
-                        </Link>
-                      )}
-                    </li>
-                    <li>
-                      {next && (
-                        <Link to={next.fields.slug} rel="next">
-                          {next.frontmatter.title} →
-                        </Link>
-                      )}
-                    </li>
-                  </ul>
-                </nav>
-              </Grid>
+            <nav>
+              <ul
+                style={{
+                  display: `flex`,
+                  flexWrap: `wrap`,
+                  justifyContent: `space-between`,
+                  listStyle: `none`,
+                  padding: 0,
+                }}
+              >
+                <li>
+                  {previous && (
+                    <Link to={previous.fields.slug} rel="prev">
+                      ← {previous.frontmatter.title}
+                    </Link>
+                  )}
+                </li>
+                <li>
+                  {next && (
+                    <Link to={next.fields.slug} rel="next">
+                      {next.frontmatter.title} →
+                    </Link>
+                  )}
+                </li>
+              </ul>
+            </nav>
+          </Grid>
         </Grid>
       </Layout>
     </>
