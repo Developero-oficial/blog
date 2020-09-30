@@ -20,6 +20,9 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+        stylesProvider: {
+          injectFirst: true,
+        },
       },
     },
     {
