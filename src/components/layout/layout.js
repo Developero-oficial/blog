@@ -5,44 +5,16 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core/styles'
 
 import { NavBar } from '../nav-bar'
-import { Logo } from '../logo'
 import { Footer } from '../footer'
 
 import { theme } from '../../utils/theme'
 
-const logoStyles = {
-  display: `block`,
-  margin: `0 auto`,
-  width: 48,
-  height: 48,
-}
-
-const navBarLinks = [
-  {
-    path: '/',
-    label: 'Inicio',
-  },
-  {
-    path: '/blog',
-    label: 'Developero Blog',
-  },
-  {
-    path: '/about',
-    label: 'Sobre el autor',
-  },
-]
-
 const Layout = ({ location, social, children }) => {
   return (
-    <>
+    <Container maxWidth="md">
       <CssBaseline />
       <ThemeProvider theme={theme}>
-        <NavBar
-          location={location}
-          links={navBarLinks}
-          renderLogo={() => <Logo style={logoStyles} />}
-        />
-        <Container>
+        <NavBar location={location} />
           <main>
             {children}
           </main>
@@ -52,9 +24,8 @@ const Layout = ({ location, social, children }) => {
               © {new Date().getFullYear()}, Developero
             </Typography>
           </Footer>
-        </Container>
       </ThemeProvider>
-    </>
+    </Container>
   )
 }
 
