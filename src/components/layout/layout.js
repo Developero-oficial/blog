@@ -17,9 +17,7 @@ const Layout = ({ location, social, children }) => {
         <NavBar location={location} />
         <main>{children}</main>
 
-        <Footer socialLinks={social} styles={{ marginTop: 32 }}>
-          <Typography>© {new Date().getFullYear()}, Developero</Typography>
-        </Footer>
+        <Footer socialLinks={social} />
       </ThemeProvider>
     </Container>
   )
