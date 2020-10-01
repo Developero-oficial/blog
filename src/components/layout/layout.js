@@ -12,8 +12,8 @@ import { theme } from "../../utils/theme"
 const Layout = ({ location, social, children }) => {
   return (
     <Container maxWidth="md">
-      <CssBaseline />
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <NavBar location={location} />
         <main>{children}</main>
 

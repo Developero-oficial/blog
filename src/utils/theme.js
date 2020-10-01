@@ -17,7 +17,7 @@ export const theme = createMuiTheme({
       main: red.A400,
     },
     background: {
-      default: "#fff",
+      default: "#F3F3EE",
     },
   },
 })
