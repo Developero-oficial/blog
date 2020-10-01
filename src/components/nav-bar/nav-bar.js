@@ -44,6 +44,10 @@ const navBarLinks = [
     label: "Blog",
   },
   {
+    path: "/ebooks",
+    label: "Ebooks",
+  },
+  {
     path: "/about",
     label: "Acerca De",
   },

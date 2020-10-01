@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="283" height="350" viewBox="0 0 283 350">
+  <defs>
+    <clipPath id="clip-custom_1">
+      <rect width="283" height="350"/>
+    </clipPath>
+  </defs>
+  <g id="custom_1" data-name="custom – 1" clip-path="url(#clip-custom_1)">
+    <g id="Group_1" data-name="Group 1" transform="translate(-109)">
+      <g id="Path_1" data-name="Path 1" transform="translate(126.328 19.328)" fill="#f6f6f6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 256.6699829101562 320.671875 L 247.6699981689453 320.671875 L -8.544921911379788e-06 320.671875 L -9.000008583068848 320.671875 L -9.000008583068848 311.671875 L -9.000008583068848 -1.249999968422344e-05 L -9.000008583068848 -9.000012397766113 L -8.544921911379788e-06 -9.000012397766113 L 247.6699981689453 -9.000012397766113 L 256.6699829101562 -9.000012397766113 L 256.6699829101562 -1.249999968422344e-05 L 256.6699829101562 311.671875 L 256.6699829101562 320.671875 Z" stroke="none"/>
+        <path d="M -1.52587890625e-05 0 L -1.52587890625e-05 311.671875 L 247.6699981689453 311.671875 L 247.6699981689453 0 L -1.52587890625e-05 0 M -1.52587890625e-05 -18 L 247.6699981689453 -18 C 257.6111145019531 -18 265.6699829101562 -9.941131591796875 265.6699829101562 0 L 265.6699829101562 311.671875 C 265.6699829101562 321.6130065917969 257.6111145019531 329.671875 247.6699981689453 329.671875 L -1.52587890625e-05 329.671875 C -9.941131591796875 329.671875 -18 321.6130065917969 -18 311.671875 L -18 0 C -18 -9.941131591796875 -9.941131591796875 -18 -1.52587890625e-05 -18 Z" stroke="none" fill="#4b4b4b"/>
+      </g>
+      <text id="Hook_de_estado:_useState_" data-name="Hook de estado: useState
+
+" transform="translate(143 53)" fill="#707070" font-size="18" font-family="HelveticaNeue, Helvetica Neue"><tspan x="0" y="17">Hook de estado: useState</tspan></text>
+      <text id="El_hook_useState_te_permite_poder_usar_variables_de_estado_dentro_de_un_componente_funcional._Este_es_el_hook_que_probablemente_mas_usaras_por_lo_que_comprenderlo_bien_va_a_ser_muy_importante._Comparación_de_componente_tipo_clase_y_funcional_al_usar_vari" data-name="El hook useState te permite poder usar variables de estado dentro de un componente funcional.
+
+Este es el hook que probablemente mas usaras por lo que comprenderlo bien va a ser muy importante.
+
+Comparación de componente tipo clase y funcional al usar vari" transform="translate(140 121)" fill="#707070" font-size="13" font-family="HelveticaNeue, Helvetica Neue"><tspan x="0" y="12">El hook useState te permite poder </tspan><tspan x="0" y="27">usar variables de estado dentro de </tspan><tspan x="0" y="42">un componente funcional.</tspan><tspan x="0" y="57"></tspan><tspan x="0" y="72">Este es el hook que probablemente </tspan><tspan x="0" y="87">mas usaras por lo que comprenderlo </tspan><tspan x="0" y="102">bien va a ser muy importante.</tspan><tspan x="0" y="117"></tspan><tspan x="0" y="132">Comparación de componente tipo </tspan><tspan x="0" y="147">clase y funcional al usar variables de </tspan><tspan x="0" y="162">estado.</tspan></text>
+    </g>
+  </g>
+</svg>
