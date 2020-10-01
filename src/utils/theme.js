@@ -1,25 +1,25 @@
-import { red } from '@material-ui/core/colors';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { red } from "@material-ui/core/colors"
+import { createMuiTheme } from "@material-ui/core/styles"
 
-export const primaryColor = '#1717ff';
-export const secondaryColor = '#00ed65';
-export const textColor = '#2d2d2d';
+export const primaryColor = "#1717ff"
+export const secondaryColor = "#00ed65"
+export const textColor = "#2d2d2d"
 
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#1717ff',
+      main: "#1717ff",
     },
     secondary: {
-      main: '#00ed65',
+      main: "#00ed65",
     },
     error: {
       main: red.A400,
     },
     background: {
-      default: '#fff',
+      default: "#fff",
     },
   },
-});
+})
 
-export default theme;
+export default theme

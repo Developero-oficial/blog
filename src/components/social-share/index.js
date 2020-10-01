@@ -1,3 +1,3 @@
-import { SocialShare } from './social-share'
+import { SocialShare } from "./social-share"
 
 export { SocialShare }

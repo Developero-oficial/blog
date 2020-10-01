@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
-import './footer.module.css'
+import "./footer.module.css"
 
-import { secondaryColor } from '../../utils/theme'
+import { secondaryColor } from "../../utils/theme"
 
 export const Footer = ({ socialLinks, children, styles = {} }) => {
   return (
@@ -15,7 +15,8 @@ export const Footer = ({ socialLinks, children, styles = {} }) => {
             rel="noreferrer"
             href={socialLinks.youtube}
             data-testid="link-social-youtube"
-            style={{ color: secondaryColor }}>
+            style={{ color: secondaryColor }}
+          >
             YouTube
           </a>
         </li>
@@ -25,7 +26,8 @@ export const Footer = ({ socialLinks, children, styles = {} }) => {
             rel="noreferrer"
             href={socialLinks.facebook}
             data-testid="link-social-facebook"
-            style={{ color: secondaryColor }}>
+            style={{ color: secondaryColor }}
+          >
             Facebook
           </a>
         </li>
@@ -36,15 +38,13 @@ export const Footer = ({ socialLinks, children, styles = {} }) => {
             href={socialLinks.github}
             data-testid="link-social-github"
             style={{ color: secondaryColor }}
-            >
+          >
             Github
           </a>
         </li>
       </ul>
 
-      <div>
-        {children}
-      </div>
+      <div>{children}</div>
     </footer>
   )
 }

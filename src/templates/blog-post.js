@@ -1,13 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Typography from '@material-ui/core/Typography'
-import Divider from '@material-ui/core/Divider'
-import Grid from '@material-ui/core/Grid'
+import Typography from "@material-ui/core/Typography"
+import Divider from "@material-ui/core/Divider"
+import Grid from "@material-ui/core/Grid"
 
 import { Bio } from "../components/bio"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
-import { SocialShare } from '../components/social-share'
+import { SocialShare } from "../components/social-share"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -22,7 +22,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <Layout location={location} title={title} description={description} social={social}>
+      <Layout
+        location={location}
+        title={title}
+        description={description}
+        social={social}
+      >
         <Grid container justify="center" spacing={4} style={{ marginTop: 16 }}>
           <Grid item xs={12} md={8}>
             <header>
@@ -33,7 +38,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography variant="h5" component="h2" color="textSecondary" gutterBottom>
+                  <Typography
+                    variant="h5"
+                    component="h2"
+                    color="textSecondary"
+                    gutterBottom
+                  >
                     {post.frontmatter.description}
                   </Typography>
                 </Grid>
@@ -52,10 +62,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <img
               src={post.frontmatter.coverImage.publicURL}
               alt="react js tutorial en espanol 2020"
-              style={{ width: '100%',
-                height: '100%',
-                objectFit: 'cover'
-              }}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
           </Grid>
 
@@ -68,9 +75,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </Grid>
 
           <Grid item xs={12} md={8}>
-            <Typography variant="h6">
-              Comparte el conocimiento
-            </Typography>
+            <Typography variant="h6">Comparte el conocimiento</Typography>
             <SocialShare url={socialUrl} title={post.frontmatter.title} />
           </Grid>
 

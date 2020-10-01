@@ -14,15 +14,17 @@ Lo puedes comenzar a usar tanto en un proyecto ya iniciado como en uno nuevo des
 A continuación tienes un vistazo general de las principales características y casos de uso prácticos para que puedas tener una idea clara de qué y cómo puedes sacar provecho a react js.
 
 # Conceptos básicos de react js
+
 En esta sección vas a aprender los conceptos básicos de react js. Si nunca has usado react, esta sección es tu punto de partida, iremos paso a paso para que nuestras bases sean muy sólidas y podamos pasar al siguiente nivel.
 
 ## React y jsx
+
 **Jsx** es una sintaxis que nos permite escribir componentes de react de una manera más declarativa.
 
 Todos los ejemplos que veremos en este apartado son definiciones de componentes en React. Profundizaremos más sobre los componentes en los siguientes apartados.
 
 ```js
-const myComponent = () => <h1>Componente declarado con JSX</h1>;
+const myComponent = () => <h1>Componente declarado con JSX</h1>
 ```
 
 Parece HTML, pero **en realidad es Javascript**. Lo que estamos indicando aquí es: Crea en la interfaz de usuario un elemento h1 cuyo contenido sea “Componente declarado con JSX”.
@@ -32,20 +34,22 @@ Pero el navegador no sabe cómo interpretar la sintaxis de JSX. Por lo tanto, re
 Como ejemplo, este es el equivalente transpilado del código mostrado anteriormente.
 
 ```js
-const myComponent = () => <h1>Componente declarado con JSX</h1>;
+const myComponent = () => <h1>Componente declarado con JSX</h1>
 
 // equivale a
 
-const myComponent = () => React.createElement("h1", null, "Componente declarado con JSX");
+const myComponent = () =>
+  React.createElement("h1", null, "Componente declarado con JSX")
 ```
 
 No es obligatorio usar React con JSX pero es lo recomendado debido a que nos simplifica bastante el código que tenemos que escribir para declarar nuestros componentes.
 
-
 **Tips:**
+
 - Usa jsx como estándar en tus proyectos debido a que es lo más popular cuando veas el código de terceros, documentación y tutoriales.
 
 ## Jsx y expresiones de javascript
+
 Ya que Jsx es javascript puro, es posible **ejecutar expresiones de javascript** dentro del mismo.
 
 Una expresión de javascript es una sentencia del tipo:
@@ -59,33 +63,34 @@ Una expresión de javascript es una sentencia del tipo:
 Considera este ejemplo.
 
 ```js
-const name = 'john';
+const name = "john"
 
 const Grettings = () => <h1>Hello, {name}</h1>
 
 // equivalente transpilado sólo como ejemplo
 
-const name = 'john';
+const name = "john"
 
-const Grettings = () => React.createElement("h1", null, "Hello, ", name);
-
+const Grettings = () => React.createElement("h1", null, "Hello, ", name)
 ```
 
 Como puedes apreciar, para colocar expresiones se hace entre llaves ({}).
 
 **Tips:**
+
 - Utiliza expresiones de javascript para aplicar lógica en jsx. De esto veremos más adelante.
 
 ## Jsx if y else
+
 Podemos usar **condicionales dentro de la sintaxis Jsx**.
 
 ```js
-const Grettings = (name) => {
-   if (name) {
-     return <h1>Hello {name}</h1>
-   } else {
-     return <h1>Hello?</h1>
-   }
+const Grettings = name => {
+  if (name) {
+    return <h1>Hello {name}</h1>
+  } else {
+    return <h1>Hello?</h1>
+  }
 }
 ```
 
@@ -94,17 +99,21 @@ En este ejemplo, estamos pasando por parámetro la variable name y en la condici
 Más adelante vamos a ver diferentes maneras de renderizado condicional.
 
 ## Jsx y atributos
+
 Ya que usamos Jsx para declarar elementos a mostrar en el navegador, también podemos especificar los **atributos** de dichos elementos.
 
 ```js
-const myElement = <div id="element">Mi elemento</div>;
+const myElement = <div id="element">Mi elemento</div>
 
 // equivalente transpilado
 
-const myElement = React.createElement("div", {
-  id: "element"
-}, "Mi elemento");
-
+const myElement = React.createElement(
+  "div",
+  {
+    id: "element",
+  },
+  "Mi elemento"
+)
 ```
 
 Como puedes ver, nos resulta muy familiar la sintaxis de Jsx pero recuerda que Jsx es javascript puro, no html, es por ello que he colocado el equivalente transpilado.
@@ -112,25 +121,26 @@ Como puedes ver, nos resulta muy familiar la sintaxis de Jsx pero recuerda que J
 Otros ejemplos.
 
 ```js
-const Avatar = (user) => <img src={user.photo} />
+const Avatar = user => <img src={user.photo} />
 
-const getSum = (n1, n2) => n1 + n2;
+const getSum = (n1, n2) => n1 + n2
 
 const Result = () => <h1>{getSum(1, 2)}</h1>
-
 ```
 
 **Tips:**
+
 - Usa comillas para valores que son una cadena
 - Usa llaves para valores diferentes a una cadena como un número, una función, propiedad de un objeto, etc.
 
 ## Jsx y childrens o hijos.
+
 Podemos anidar tantos elementos como deseemos con jsx.
 
 ```js
-const myElement = (post) => {
+const myElement = post => {
   return (
-  	<div>
+    <div>
       <h1>{post.title}</h1>
       <h2>post.subtitle</h2>
       <img src={post.img} />
@@ -144,10 +154,13 @@ En este ejemplo estamos colocando elementos h1 y h2 de manera normal, pero nota 
 Esta es una gran diferencia entre html y jsx.
 
 **Tips:**
+
 - Solo coloca etiquetas de cierre cuando realmente sean necesarias. Es válido que una etiqueta se cierre del tipo `<img /> en lugar de <img></img>`
 
 # React components
+
 Un **componente** es una pieza independiente de nuestra UI y tiene las siguientes características:
+
 - Es aislado.
 - Reusable.
 - Define la estructura (html), el estilo (css) y el comportamiento (js).
@@ -164,7 +177,7 @@ const Title = () => <h1>My Title</h1>
 const Header = () => {
   return (
     <header>
-       <Title />
+      <Title />
     </header>
   )
 }
@@ -173,9 +186,11 @@ const Header = () => {
 Más adelante profundizaremos en la composición de componentes, es decir, la manera en que podemos usar los componentes para formar otros componentes en el mismo sentido que podemos usar piezas de lego para formar otras piezas más grandes.
 
 **Tips:**
+
 - Define tus componentes siempre con letra mayúscula, esto le indica a React que es un componente y no un elemento html como un div, img, etc. Ejemplo: React va a tratar a div como un elemento html mientras que Title como un componente.
 
 Por último, los dos tipos irreductibles de componentes básicos de React son:
+
 - Componentes funcionales. Definidos por medio de una función de javascript.
 - Componentes clase. Definidos por medio de clases de ES6.
 
@@ -187,7 +202,7 @@ const myComponent = () => <p>Hello world</p>
 
 // componente de clase
 class OtherComponent extends React.Component {
-  render () {
+  render() {
     return <p>Hello world</p>
   }
 }
@@ -197,6 +212,7 @@ Ambos ejemplos anteriores son equivalentes a la hora de definir un componente.
 Vamos a profundizar más en el componente de tipo clase en la parte de estado y ciclos de vida.
 
 ## Renderizar componentes
+
 La manera de **renderizar un componente** en una aplicación es por medio de una utilidad llamada **ReactDOM**.
 
 ```js
@@ -208,11 +224,13 @@ ReactDOM.render(<MyComponent />, document.getElementById(‘root’));
 render acepta dos parámetros: un componente y el lugar del DOM donde queremos que se monte.
 
 **Tips:**
+
 - Comúnmente se usa el div con id igual a root y es lo recomendado.
 - Si estás creando una app de React desde cero, define un solo render para tu app.
 - Si estás integrando React a una app existente, es válido y común que existan varios render con diferentes divs e ids.
 
 ## React Props
+
 También podemos hacer una analogía de los componentes como una función.
 
 Una función puede recibir parámetros y ejecutar operaciones o procesos.
@@ -252,13 +270,15 @@ Pues bien, **los props es un objeto de javascript que es pasado como un parámet
 Con esto ya has aprendido lo que son los props!
 
 **Tips:**
+
 - Los props son solo de lectura, esto significa que no debes cambiarles su valor.
 - Ya que props es un objeto, puedes lo puedes desestructurar del modo: `const MyComp = ({ name }) => <h1>{name}</h1>`.
 - Los valores de los props pueden ser: un objeto, array, cadena, número, función, incluso componentes o elementos.
-También hay un prop especial llamado children que es el contenido hijo de un componente, ejemplo: `<Title>Mi título <Title />`, accederias: `const Title = (props) => <h1>{props.children}</h1>` donde children es igual a “Mi título”.
+  También hay un prop especial llamado children que es el contenido hijo de un componente, ejemplo: `<Title>Mi título <Title />`, accederias: `const Title = (props) => <h1>{props.children}</h1>` donde children es igual a “Mi título”.
 - Existe una herramienta llamada prop-types qué nos sirve para validar el tipado de los props que recibe un componente, úsala siempre.
 
 # State y ciclo de vida de un componente
+
 **El estado de un componente** es la manera en que un componente puede controlar valores privados o internos.
 
 A diferencia de los props que son solo de lectura y no pueden ser modificados por el componente directamente, el estado es un valor que si es controlado por el componente y es modificado por el mismo.
@@ -271,25 +291,25 @@ Vamos a ver un ejemplo de un componente que actualizará estado cada segundo sol
 
 ```js
 class Counter extends React.Component {
-  constructor (props) {
-    super(props);
+  constructor(props) {
+    super(props)
     // definimos el estado como un objeto que tiene solo una propiedad (pero no es limitado a una)
     this.state = {
       counter: 0,
-    };
+    }
 
     // esto es solo como ejemplo, vamos a cambiarlo a continuación
     // actualizamos usando la función this.setState
-    setInterval(() => this.setState({ counter: this.state.counter + 1 }), 1000);
+    setInterval(() => this.setState({ counter: this.state.counter + 1 }), 1000)
   }
 
   // este método es obligatorio para componentes tipo clase y debe retornar un elemento válido
-  render () {
+  render() {
     return <h1>Counter: {this.state.counter}</h1>
   }
 }
 
-React.render(<Counter />, document.getElementById('app'));
+React.render(<Counter />, document.getElementById("app"))
 ```
 
 Corriendo el ejemplo anterior, vamos a notar que el componente actualiza el contador de manera correcta!
@@ -297,13 +317,15 @@ Corriendo el ejemplo anterior, vamos a notar que el componente actualiza el cont
 Nota: no es recomendable usar el setInterval en el constructor, vamos a cambiarlo a continuación.
 
 **Tips:**
+
 - Modifica el estado solamente con setState. Si modificas el estado directamente, el componente no se volverá a renderizar.
 - Considera que la actualización del estado puede ser asíncrona.
 - Por performance, internamente React puede agrupar varias llamadas de setState, por lo que this.setState({ counter: this.state.counter + 1 }) podría tener una version del estado counter diferente al que esperamos.
-Para solucionar lo anterior, setState acepta una función como primer argumento en lugar de un objeto: this.setState((state) => ({ counter: state.counter + 1 })).
-- Las actualizaciones del estado se fusionan. Ejemplo: puedes tener tu estado como this.state = { valueA: ‘’, valueB: ‘’ }, si haces this.setState({ valueA: ‘some’  }) React va actualizar solamente valueA pero dejará intacto a valueB.
+  Para solucionar lo anterior, setState acepta una función como primer argumento en lugar de un objeto: this.setState((state) => ({ counter: state.counter + 1 })).
+- Las actualizaciones del estado se fusionan. Ejemplo: puedes tener tu estado como this.state = { valueA: ‘’, valueB: ‘’ }, si haces this.setState({ valueA: ‘some’ }) React va actualizar solamente valueA pero dejará intacto a valueB.
 
 ## Ciclo de vida de un componente
+
 Una gran diferencia entre un componente de tipo clase y uno de tipo function es que en el de tipo clase nos da acceso a unos métodos reservados que nos permiten acceder al **ciclo de vida del componente**.
 
 > Nota: en la parte de React hooks veremos cómo podemos replicar el mismo comportamiento en componentes de tipo function.
@@ -363,36 +385,41 @@ Siempre debes ejecutar super(props) en el constructor para que this.props exista
 -No debes llamar setState en el constructor, llama this.state para asignar valores la estado directamente.
 -No implementes lógica que haga efectos secundarios como una llamada a una api en el constructor.
 -No copies los valores de los props en el estado. this.state = { name: props.name } es una mala practica. Cuando se actualice el prop, no se verá reflejado en el state. Mejor usa los props directamente.
+
 - Sin embargo, es válido asignar al state el valor de un prop si tu intención es asignar un valor inicial o default. this.state = { name: props.initialName } tiene mas sentido.
 
 **Tips en componentDidMount**:
+
 - Es el lugar adecuado para llamadas a apis. Ejemplo: cuando consumes una api para cargar y mostrar los datos en tu componente.
 - Es buen lugar para crear suscripciones.
 
 **Tips en componentDidUpdate**:
+
 - Toma en cuenta que no se ejecuta la primera vez que se monta el componente.
 - Buen lugar para optimizar las llamadas a apis solo si es realmente necesario.
 - Incluso si aqui actualizas el estado, este método se volverá a ejecutar. Para evitar loops infinitos de actualizaciones, coloca una condición antes de actualizar el estado.
 
 **Tips en componentWillUnmount**:
+
 - Buen lugar para limpiar las suscripciones que hayas hecho en componentDidMount.
 - No llames setState aquí debido a que el componente será desmontado y no seguirá existiendo.
 
-
 ## React list
+
 La manera de **renderizar un listado de elementos en react** es por medio de arrays y el método map (propio del prototype de Array de javascript).
 
 ```js
 const ListNames = () => {
- const names = ['John', 'Smith', 'Lulu'];
+  const names = ["John", "Smith", "Lulu"]
 
- return (
-   <ul>
-     {names.map((name) => <li>{name}</li>)}
-   </ul>
- );
-};
-
+  return (
+    <ul>
+      {names.map(name => (
+        <li>{name}</li>
+      ))}
+    </ul>
+  )
+}
 ```
 
 Si corremos este código, veremos que funciona correctamente.
@@ -405,14 +432,16 @@ Esto es debido a que necesitamos proporcionar el **prop key** en los elementos d
 
 ```js
 const ListNames = () => {
- const names = ['John', 'Smith', 'Lulu'];
+  const names = ["John", "Smith", "Lulu"]
 
- return (
-   <ul>
-     {names.map((name) => <li key={name}>{name}</li>)}
-   </ul>
- );
-};
+  return (
+    <ul>
+      {names.map(name => (
+        <li key={name}>{name}</li>
+      ))}
+    </ul>
+  )
+}
 ```
 
 Las **keys** existen para indicarle a React qué elementos han cambiado, han sido agregados o han sido removidos.
@@ -421,25 +450,23 @@ También puedes asignar el resultado de un map a una variable y luego usar esa v
 
 ```js
 const ListNames = () => {
- const names = ['John', 'Smith', 'Lulu'];
- const listNames = names.map((name) => <li key={name}>{name}</li>);
+  const names = ["John", "Smith", "Lulu"]
+  const listNames = names.map(name => <li key={name}>{name}</li>)
 
- return (
-   <ul>
-     {listNames}
-   </ul>
- );
-};
+  return <ul>{listNames}</ul>
+}
 ```
 
 Recordemos que jsx nos permite usar expresiones de javascript.
 
 **Tips:**
+
 - Cuando hagas listas de elementos (independientemente de que los elementos sean li, p, h1, componentes, etc;) siempre proporciona el prop key.
 - Los valores de las keys deben ser únicos entre hermanos.
 - Si los datos que estas listando provienen de una api, por lo común tendrán una propiedad de id, ese lo puedes usar como valor de key. Ejemplo: `values: [{ id: 1, name: ‘john’ }, { id: 2, name ‘joana’ }]`.
 
 ## React js formularios
+
 La manera básica y más común de manejar formularios en React consiste en hacer formularios controlados.
 
 Un **formulario controlado** consiste en un formulario cuyos valores y eventos son controlados por React.
@@ -448,16 +475,16 @@ Vamos a ver un ejemplo de un formulario que no está siendo controlado por React
 
 ```js
 const Form = () => {
- return (
-   <form>
-     <label>
-       Name:
-       <input type="text" name="name" />
-     </label>
-     <input type="submit" value="Submit" />
-   </form>
- )
-};
+  return (
+    <form>
+      <label>
+        Name:
+        <input type="text" name="name" />
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+  )
+}
 ```
 
 Hasta aquí nada nuevo, esto tiene el comportamiento por default de un formulario en html.
@@ -466,24 +493,24 @@ Para controlar los valores del formulario, necesitamos usar el estado del compon
 
 ```js
 class Form extends React.Component {
- constructor(props) {
-   super(props);
-   this.state = {
-     name: ""
-   };
- }
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: "",
+    }
+  }
 
- render() {
-   return (
-     <form>
-       <label>
-         Name:
-         <input type="text" name="name" value={this.state.name} />
-       </label>
-       <input type="submit" value="Submit" />
-     </form>
-   );
- }
+  render() {
+    return (
+      <form>
+        <label>
+          Name:
+          <input type="text" name="name" value={this.state.name} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    )
+  }
 }
 ```
 
@@ -495,39 +522,38 @@ Necesitamos agregar un manejador del evento change en el input para que se actua
 
 ```js
 class Form extends React.Component {
- constructor(props) {
-   super(props);
-   this.state = {
-     name: ""
-   };
- }
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: "",
+    }
+  }
 
- handleChange = (e) => {
-   this.setState({ name: e.target.value });
- }
+  handleChange = e => {
+    this.setState({ name: e.target.value })
+  }
 
- handleSubmit = (e) => {
-   e.preventDefault();
-   alert(Object.values(this.state));
- };
+  handleSubmit = e => {
+    e.preventDefault()
+    alert(Object.values(this.state))
+  }
 
-
- render() {
-   return (
-     <form onSubmit={this.handleSubmit}>
-       <label>
-         Name:
-         <input
-           type="text"
-           name="name"
-           value={this.state.name}
-           onChange={this.handleChange}
-         />
-       </label>
-       <input type="submit" value="Submit" />
-     </form>
-   );
- }
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input
+            type="text"
+            name="name"
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    )
+  }
 }
 ```
 
@@ -540,62 +566,63 @@ Ya que es un manejador de evento, recibe por valor el objeto event que contiene 
 Para el evento submit usamos `this.handleSubmit`. En este caso ejecutamos `e.preventDefault`, una función del objeto event para prevenir que se ejecute el comportamiento default (recargar la página). Después ejecutamos un alert con los valores del estado.
 
 ## React formulario con múltiples inputs
+
 Para un **formulario que contiene múltiples inputs**, podemos hacer lo siguiente:
 
 ```js
 class Form extends React.Component {
- constructor(props) {
-   super(props);
-   this.state = {
-     name: "",
-     address: "",
-     age: ""
-   };
- }
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: "",
+      address: "",
+      age: "",
+    }
+  }
 
- handleChange = e => {
-   this.setState({ [e.target.name]: e.target.value });
- };
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
 
- handleSubmit = (e) => {
-   e.preventDefault();
-   alert(Object.values(this.state));
- };
+  handleSubmit = e => {
+    e.preventDefault()
+    alert(Object.values(this.state))
+  }
 
- render() {
-   return (
-     <form onSubmit={this.handleSubmit}>
-       <p>
-         Name:
-         <input
-           type="text"
-           name="name"
-           value={this.state.name}
-           onChange={this.handleChange}
-         />
-       </p>
-       <p>
-         address:
-         <input
-           type="text"
-           name="address"
-           value={this.state.address}
-           onChange={this.handleChange}
-         />
-       </p>
-       <p>
-         age:
-         <input
-           type="number"
-           name="age"
-           value={this.state.age}
-           onChange={this.handleChange}
-         />
-       </p>
-       <input type="submit" value="Submit" />
-     </form>
-   );
- }
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <p>
+          Name:
+          <input
+            type="text"
+            name="name"
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+        </p>
+        <p>
+          address:
+          <input
+            type="text"
+            name="address"
+            value={this.state.address}
+            onChange={this.handleChange}
+          />
+        </p>
+        <p>
+          age:
+          <input
+            type="number"
+            name="age"
+            value={this.state.age}
+            onChange={this.handleChange}
+          />
+        </p>
+        <input type="submit" value="Submit" />
+      </form>
+    )
+  }
 }
 ```
 
@@ -628,13 +655,16 @@ Estos dos ejemplos son equivalentes e igualmente válidos.
 Entonces, cuando otro input sea cambiado, e.target.name tendra el nombre del input que hizo el cambio. De esta manera estamos actualizando el estado de manera dinámica.
 
 **Tips:**
+
 - Saca provecho de las propiedades name y value del objeto e.target para actualizar el estado de un formulario de manera dinámica.
 - Recuerda que hay eventos (onChange, onSubmit, etc) y manejadores de eventos que son funciones donde nosotros colocamos la lógica de lo que queremos hacer con el formulario.
 
 En la parte de React hooks vamos a ver este mismo ejemplo pero usando los hooks de react.
 
 ## Tipos de componentes de React
+
 Existen dos tipos de componentes básicos:
+
 - De tipo clase.
 - De tipo function.
 
@@ -651,6 +681,7 @@ Hasta antes de la llegada de los hooks de React, a los componentes de tipo clase
 Sin embargo, actualmente ya no es válida esa separación debido a que un componente tipo function ya puede tener un estado usando el hook useState.
 
 ## Smart y Dumb components
+
 Esta categorización de componentes es meramente conceptual y se basa en separar los componentes por el tipo de responsabilidad que se les asigna.
 
 Fue presentado por **Dan Abramov**, coautor de **react redux** y **create-react-app**.
@@ -664,6 +695,7 @@ Sin embargo, el propio Dan Abramov ha comentado que con la llegada de los hooks 
 Por lo que no ahondaremos demasiado en este aspecto.
 
 ## React hooks tutorial
+
 Los **hooks** fueron introducidos en la versión 16.8 de React y nos permiten usar las características de React sin tener que escribir una clase.
 
 Los **hooks** son opcionales y no hacen rupturas con los componentes de tipo clase, no es necesario reemplazar código de componentes clase con hooks.
@@ -675,21 +707,21 @@ Nota: aquí veremos solamente los dos principales hooks que son los que necesita
 A continuación veremos los principales hooks con ejemplos.
 
 ### React hooks useState
+
 Este hook te permite declarar un estado en un componente de tipo function, cosa que antes era posible solo en componentes de tipo clase.
 
 ```js
-import React, { useState } from "react";
+import React, { useState } from "react"
 
 const Counter = () => {
- const [counter, setCounter] = useState(0);
- return (
-   <div>
-     <button onClick={() => setCounter(counter + 1)}>Click me!</button>
-     <div>Clicked times: {counter}</div>
-   </div>
- );
-};
-
+  const [counter, setCounter] = useState(0)
+  return (
+    <div>
+      <button onClick={() => setCounter(counter + 1)}>Click me!</button>
+      <div>Clicked times: {counter}</div>
+    </div>
+  )
+}
 ```
 
 El **hook useState** es una función que retorna un array con dos valores. En el primer índice del array tenemos la variable de estado, en el segundo índice tenemos a una función que nos permite actualizar dicho estado.
@@ -697,20 +729,17 @@ El **hook useState** es una función que retorna un array con dos valores. En el
 Esto es equivalente a:
 
 ```js
-import React, { useState } from "react";
+import React, { useState } from "react"
 
 const Counter = () => {
- const state = useState(0);
- return (
-   <div>
-     <button onClick={() => state[1](state[0] + 1)}>
-       Click me!
-     </button>
-     <div>Clicked times: {state[0]}</div>
-   </div>
- );
-};
-
+  const state = useState(0)
+  return (
+    <div>
+      <button onClick={() => state[1](state[0] + 1)}>Click me!</button>
+      <div>Clicked times: {state[0]}</div>
+    </div>
+  )
+}
 ```
 
 Pero no es tan legible, por lo que usamos la desestructuración de los array en javascript para hacerlo más legible.
@@ -718,26 +747,24 @@ Pero no es tan legible, por lo que usamos la desestructuración de los array en 
 El único argumento para useState es el valor del estado inicial. En este ejemplo, el valor inicial es 0 pero un estado inicial puede ser cualquier tipo de variable primitiva, array y objeto.
 
 **Tips:**
+
 - Puedes usar más de una vez el hook useState. De este modo puedes separar la lógica de actualizar diferentes tipos de estado.
 - El valor del estado permanecerá entre re renderizaciones.
 
 ### React hooks useEffect
+
 El **hook useEffect** te permite ejecutar “efectos secundarios”. Un efecto secundario consiste en cualquier operación que pueda afectar a los componentes y que no puedas ejecutar durante el renderizado. Ejemplos: consumo de apis, suscripciones y modificaciones manuales del DOM.
 
 Este hook consolida los ciclos **componentDidMount**, **componentDidUpdate** y **componentWillUnmount** de las clases en un solo lugar y aquí puedes hacer lo mismo que harías en cualquiera de esos ciclos.
 
 ```js
-import React, { useEffect } from "react";
+import React, { useEffect } from "react"
 
 const HelloWorld = () => {
- useEffect(() => console.log('useEffect'));
+  useEffect(() => console.log("useEffect"))
 
- return (
-   <h1>
-     Hello world
-   </h1>
- );
-};
+  return <h1>Hello world</h1>
+}
 ```
 
 El **hook useEffect** recibe como primer argumento un callback que de manera predeterminada, será ejecutado cada vez que se haga un render del componente. Se debe declarar siempre dentro del componente para poder acceder a los props y el estado del componente.
@@ -745,29 +772,25 @@ El **hook useEffect** recibe como primer argumento un callback que de manera pre
 Otro caso de uso es el crear suscripciones y limpiarlas.
 
 ```js
-import React, { useEffect } from "react";
+import React, { useEffect } from "react"
 
 // ejemplo de un objeto que nos permite suscribirnos
 const fakeSuscription = {
- subscribe () {},
- unsubscribe () {},
-};
+  subscribe() {},
+  unsubscribe() {},
+}
 
 const HelloWorld = () => {
- useEffect(() => {
-   // suscribete
-   fakeSuscription.subscribe();
+  useEffect(() => {
+    // suscribete
+    fakeSuscription.subscribe()
 
-   // remueve la suscripción antes de desmontar el componente
-   return () => fakeSuscription.unsubscribe();
- });
+    // remueve la suscripción antes de desmontar el componente
+    return () => fakeSuscription.unsubscribe()
+  })
 
- return (
-   <h1>
-     Hello world
-   </h1>
- );
-};
+  return <h1>Hello world</h1>
+}
 ```
 
 Este es solo un ejemplo de una posible manera en la que puedes implementar una suscripción y des suscripción.
@@ -777,33 +800,30 @@ Cuando el hook useEffect retorna una función, React ejecutará dicha función a
 El hook useEffect también puede recibir **un array como segundo parámetro**. Este array nos sirve para indicarle a React que ejecute el efecto si y sólo si alguno de los valores del array es actualizado.
 
 ```js
-const HelloWorld = (props) => {
- useEffect(() => {
-   // suscribete
-   fakeSuscription.suscribe(props.id);
+const HelloWorld = props => {
+  useEffect(() => {
+    // suscribete
+    fakeSuscription.suscribe(props.id)
 
-   // remueve la suscripción antes de desmontar el componente
-   return () => fakeSuscription.unsubscribe();
- }, [props.id]);
+    // remueve la suscripción antes de desmontar el componente
+    return () => fakeSuscription.unsubscribe()
+  }, [props.id])
 
- return (
-   <h1>
-     Hello world
-   </h1>
- );
-};
-
+  return <h1>Hello world</h1>
+}
 ```
 
 Si solo pasas un array vacío, entonces el efecto se ejecutará una vez solamente.
 
 **Tips:**
+
 - Puedes declarar más de un useEffect en un componente. Separa responsabilidades creando efectos separados donde manejen su propia lógica.
 - **Usa un array vacío como segundo parámetro para emular componentDidMount**.
 - Recuerda siempre limpiar las suscripciones que llegues a realizar retornando una función con la lógica para limpiar las suscripciones.
 - Recuerda que el comportamiento predeterminado de useEffect es ejecutarse cada que se haga un render. Si lo deseas, puedes controlar esto pasando las dependencias de ese efecto dentro del array como segundo parámetro para que se ejecute solo si una dependencia cambia.
 
 ### Siguientes pasos.
+
 ¡Felicidades por haber recorrido todo este camino hasta aquí! Ya conoces lo básico de React para comenzar a crear tus propias aplicaciones.
 
 Puedes usar esto como una guía y regresar para consultar algo cada que lo necesites.

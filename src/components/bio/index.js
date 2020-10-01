@@ -1,4 +1,2 @@
-import Bio from './bio'
-export {
-  Bio
-}
+import Bio from "./bio"
+export { Bio }

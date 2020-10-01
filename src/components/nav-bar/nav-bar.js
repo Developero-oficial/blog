@@ -1,81 +1,79 @@
 import React, { useState } from "react"
 import { Link as GatsbyLink } from "gatsby"
-import { makeStyles } from '@material-ui/core/styles'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import Link from '@material-ui/core/Link'
-import withWidth from '@material-ui/core/withWidth'
-import Grid from '@material-ui/core/Grid'
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
-import ListItem from '@material-ui/core/ListItem'
-import List from '@material-ui/core/List'
-import PropTypes from 'prop-types'
+import { makeStyles } from "@material-ui/core/styles"
+import Toolbar from "@material-ui/core/Toolbar"
+import Typography from "@material-ui/core/Typography"
+import Link from "@material-ui/core/Link"
+import withWidth from "@material-ui/core/withWidth"
+import Grid from "@material-ui/core/Grid"
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
+import IconButton from "@material-ui/core/IconButton"
+import MenuIcon from "@material-ui/icons/Menu"
+import ListItem from "@material-ui/core/ListItem"
+import List from "@material-ui/core/List"
+import PropTypes from "prop-types"
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   toolbar: {
     paddingBottom: theme.spacing(2),
     paddingTop: theme.spacing(2),
   },
   brandLink: {
-    '&:hover': {
-      textDecoration: 'none',
-    }
+    "&:hover": {
+      textDecoration: "none",
+    },
   },
   toolbarLink: {
     padding: theme.spacing(1),
     flexShrink: 0,
     borderRadius: 5,
-    transition: '0.3s',
-    '&:hover': {
-      backgroundColor: 'rgba(0, 0, 0, 0.1)',
-      textDecoration: 'none',
-    }
+    transition: "0.3s",
+    "&:hover": {
+      backgroundColor: "rgba(0, 0, 0, 0.1)",
+      textDecoration: "none",
+    },
   },
   toolbarLinkSelected: {
-    backgroundColor: 'rgba(0, 0, 0, 0.1)'
+    backgroundColor: "rgba(0, 0, 0, 0.1)",
   },
-}));
+}))
 
 const navBarLinks = [
   {
-    path: '/blog',
-    label: 'Blog',
+    path: "/blog",
+    label: "Blog",
   },
   {
-    path: '/about',
-    label: 'Acerca De',
+    path: "/about",
+    label: "Acerca De",
   },
 ]
 
 const NavBar = ({ location, width }) => {
   const classes = useStyles()
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleDrawerClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
-  const renderLinks = () => (
-    navBarLinks.map(({ path, label}) => {
-      const className = `${classes.toolbarLink} ${location.pathname === path && classes.toolbarLinkSelected}`
+  const renderLinks = () =>
+    navBarLinks.map(({ path, label }) => {
+      const className = `${classes.toolbarLink} ${
+        location.pathname === path && classes.toolbarLinkSelected
+      }`
       return (
         <Grid item key={label}>
-          <Link
-            component={GatsbyLink}
-            to={path}
-            className={className}>
-              {label}
+          <Link component={GatsbyLink} to={path} className={className}>
+            {label}
           </Link>
         </Grid>
       )
     })
-  )
 
   const renderDrawIcon = () => (
     <IconButton
@@ -94,9 +92,10 @@ const NavBar = ({ location, width }) => {
         container
         alignItems="center"
         alignContent="center"
-        justify="space-between">
+        justify="space-between"
+      >
         <Grid item xs={2}>
-          <Typography variant="h5" variantMapping={{ h5: 'h1' }}>
+          <Typography variant="h5" variantMapping={{ h5: "h1" }}>
             <Link to="/" component={GatsbyLink} className={classes.brandLink}>
               Developero
             </Link>
@@ -104,9 +103,7 @@ const NavBar = ({ location, width }) => {
         </Grid>
         <Grid item>
           <Grid container spacing={1}>
-          {
-            width === 'xs' ? renderDrawIcon() : renderLinks()
-          }
+            {width === "xs" ? renderDrawIcon() : renderLinks()}
           </Grid>
         </Grid>
 
@@ -117,15 +114,13 @@ const NavBar = ({ location, width }) => {
           onClose={handleDrawerClose}
         >
           <List>
-            {
-              navBarLinks.map(({ path, label }) => (
-                <ListItem button key={label}>
-                  <Link to={path} component={GatsbyLink}>
-                    {label}
-                  </Link>
-                </ListItem>
-              ))
-            }
+            {navBarLinks.map(({ path, label }) => (
+              <ListItem button key={label}>
+                <Link to={path} component={GatsbyLink}>
+                  {label}
+                </Link>
+              </ListItem>
+            ))}
           </List>
         </SwipeableDrawer>
       </Grid>

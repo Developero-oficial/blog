@@ -1,5 +1,3 @@
-import SEO from './seo'
+import SEO from "./seo"
 
-export {
-  SEO
-}
+export { SEO }
