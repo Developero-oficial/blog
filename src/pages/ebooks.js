@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link as GatsbyLink } from "gatsby"
+import { graphql } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
