@@ -3,8 +3,8 @@ import { Link, graphql } from "gatsby"
 import Typography from "@material-ui/core/Typography"
 import Divider from "@material-ui/core/Divider"
 import Grid from "@material-ui/core/Grid"
+import Box from "@material-ui/core/Box"
 
-import { Bio } from "../components/bio"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
 import { SocialShare } from "../components/social-share"
@@ -28,90 +28,85 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={description}
         social={social}
       >
-        <Grid container justify="center" spacing={4} style={{ marginTop: 16 }}>
-          <Grid item xs={12} md={8}>
-            <header>
-              <Grid container direction="column" spacing={1}>
-                <Grid item xs={12}>
-                  <Typography variant="h4" component="h1" color="textPrimary">
-                    {post.frontmatter.title}
-                  </Typography>
+        <Box my={6}>
+          <Grid container justify="center" spacing={4}>
+            <Grid item xs={12}>
+              <header>
+                <Grid container direction="column" spacing={1}>
+                  <Grid item xs={12}>
+                    <Typography variant="h4" component="h1" color="textPrimary">
+                      {post.frontmatter.title}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Typography
+                      variant="h5"
+                      component="h2"
+                      color="textSecondary"
+                      gutterBottom
+                    >
+                      {post.frontmatter.description}
+                    </Typography>
+                  </Grid>
                 </Grid>
-                <Grid item xs={12}>
-                  <Typography
-                    variant="h5"
-                    component="h2"
-                    color="textSecondary"
-                    gutterBottom
-                  >
-                    {post.frontmatter.description}
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Bio date={post.frontmatter.date} />
-                </Grid>
-              </Grid>
-            </header>
-          </Grid>
+              </header>
+            </Grid>
 
-          <Grid item xs={12} md={8}>
-            <Divider />
-          </Grid>
+            <Grid item xs={10}>
+              <img
+                src={post.frontmatter.coverImage.publicURL}
+                alt="react js tutorial en espanol 2020"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </Grid>
 
-          <Grid item xs={12} md={8}>
-            <img
-              src={post.frontmatter.coverImage.publicURL}
-              alt="react js tutorial en espanol 2020"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
-          </Grid>
+            <Grid item xs={12}>
+              <section dangerouslySetInnerHTML={{ __html: post.html }} />
+            </Grid>
 
-          <Grid item xs={12} md={8}>
-            <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          </Grid>
+            <Grid item xs={12}>
+              <Divider />
+            </Grid>
 
-          <Grid item xs={12} md={8}>
-            <Divider />
-          </Grid>
+            <Grid item xs={12}>
+              <Typography variant="h6">Comparte el conocimiento</Typography>
+              <SocialShare url={socialUrl} title={post.frontmatter.title} />
+            </Grid>
 
-          <Grid item xs={12} md={8}>
-            <Typography variant="h6">Comparte el conocimiento</Typography>
-            <SocialShare url={socialUrl} title={post.frontmatter.title} />
-          </Grid>
+            <Grid item xs={12} md={8}>
+              <Divider />
+            </Grid>
 
-          <Grid item xs={12} md={8}>
-            <Divider />
+            <Grid item xs={12} md={8}>
+              <nav>
+                <ul
+                  style={{
+                    display: `flex`,
+                    flexWrap: `wrap`,
+                    justifyContent: `space-between`,
+                    listStyle: `none`,
+                    padding: 0,
+                  }}
+                >
+                  <li>
+                    {previous && (
+                      <Link to={previous.fields.slug} rel="prev">
+                        ← {previous.frontmatter.title}
+                      </Link>
+                    )}
+                  </li>
+                  <li>
+                    {next && (
+                      <Link to={next.fields.slug} rel="next">
+                        {next.frontmatter.title} →
+                      </Link>
+                    )}
+                  </li>
+                </ul>
+              </nav>
+            </Grid>
           </Grid>
-
-          <Grid item xs={12} md={8}>
-            <nav>
-              <ul
-                style={{
-                  display: `flex`,
-                  flexWrap: `wrap`,
-                  justifyContent: `space-between`,
-                  listStyle: `none`,
-                  padding: 0,
-                }}
-              >
-                <li>
-                  {previous && (
-                    <Link to={previous.fields.slug} rel="prev">
-                      ← {previous.frontmatter.title}
-                    </Link>
-                  )}
-                </li>
-                <li>
-                  {next && (
-                    <Link to={next.fields.slug} rel="next">
-                      {next.frontmatter.title} →
-                    </Link>
-                  )}
-                </li>
-              </ul>
-            </nav>
-          </Grid>
-        </Grid>
+        </Box>
       </Layout>
     </>
   )
