@@ -16,16 +16,19 @@ Este mini framework es sólo para propósitos educativos y no recomiendo utiliza
 Todo el código fuente lo encuentras en [este repositorio](https://github.com/Developero-oficial/php-mvc).
 
 ## Patrón MVC php
+
 En este primer vídeo te explico qué es el patrón MVC, hacemos el setup inicial del ambiente de desarrollo y una muestra del resultado final.
 
 `video: https://www.youtube.com/watch?v=OW19Xrvb21I&list=PLkr7dGY4D2sMoOv1gKEVO2P-XMYdf28BQ&index=1`
 
 ## Php y htaccess para urls amigables en mvc
+
 En este vídeo se explica qué es y cómo configurar el archivo .htaccess de modo que nuestro servidor redireccione todas las peticiones a un archivo index.php, pues ese será el archivo contenedor de toda nuestra app.
 
 `video: https://www.youtube.com/watch?v=CRiG3xW6Ss8&list=PLkr7dGY4D2sMoOv1gKEVO2P-XMYdf28BQ&index=2`
 
 ## La clase Router
+
 En este vídeo vamos a crear la clase Router cuya responsabilidad es ejecutar el controlador correspondiente según la uri que recibamos en la petición.
 
 Por ejemplo, la uri: http://localhost/home nos ejecutará el controlador Home.
@@ -139,4 +142,3 @@ Ya tenemos nuestro login terminado. Sólo hace falta crear la sesión para que p
 En esta serie de vídeos creamos todo desde cero con php puro.
 
 Está claro que existen muchas librerías y frameworks open source que resuelven mejor los problemas que hemos enfrentado aquí; pero es de vital importancia que nosotros sepamos cómo resolverlos con nuestro propio cerebro 😜
-

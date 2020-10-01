@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react"
 import { Link } from "gatsby"
 
-import './logo.module.css'
+import "./logo.module.css"
 
-import logo from '../../../static/Logotipo_original.png'
+import logo from "../../../static/Logotipo_original.png"
 
 const defaultStyles = {
   display: `block`,
@@ -20,12 +20,9 @@ export const Logo = ({ style = defaultStyles }) => {
           boxShadow: `none`,
           color: `inherit`,
         }}
-        to={`/`}>
-          <img
-            src={logo}
-            alt="Developero"
-            style={style}
-          />
+        to={`/`}
+      >
+        <img src={logo} alt="Developero" style={style} />
       </Link>
     </figure>
   )

@@ -1,8 +1,8 @@
 import React from "react"
-import { graphql, Link as GatsbyLink} from "gatsby"
-import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
-import Link from '@material-ui/core/Link'
+import { graphql, Link as GatsbyLink } from "gatsby"
+import Typography from "@material-ui/core/Typography"
+import Grid from "@material-ui/core/Grid"
+import Link from "@material-ui/core/Link"
 
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
@@ -13,7 +13,12 @@ const NotFoundPage = ({ data, location }) => {
   return (
     <>
       <SEO title="404: Not Found" />
-      <Layout location={location} title={title} description={description} social={social}>
+      <Layout
+        location={location}
+        title={title}
+        description={description}
+        social={social}
+      >
         <Grid container justify="center" style={{ marginTop: 16 }}>
           <Grid item xs={12} md={8}>
             <Typography variant="h3" align="center" gutterBottom>

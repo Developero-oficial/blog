@@ -9,8 +9,8 @@ module.exports = {
     siteUrl: `https://developero.io`,
     social: {
       youtube: `https://www.youtube.com/c/developero`,
-      facebook: 'https://www.facebook.com/DeveloperoOficial/',
-      github: 'https://github.com/Developero-oficial'
+      facebook: "https://www.facebook.com/DeveloperoOficial/",
+      github: "https://github.com/Developero-oficial",
     },
   },
   plugins: [
@@ -46,12 +46,13 @@ module.exports = {
               noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
               urlOverrides: [
                 {
-                  id: 'youtube',
-                  embedURL: (videoId) => `https://www.youtube-nocookie.com/embed/${videoId}`,
-                }
+                  id: "youtube",
+                  embedURL: videoId =>
+                    `https://www.youtube-nocookie.com/embed/${videoId}`,
+                },
               ], //Optional: Override URL of a service provider, e.g to enable youtube-nocookie support
-              containerClass: 'embedVideo-container', //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
-            }
+              containerClass: "embedVideo-container", //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
+            },
           },
           {
             resolve: `gatsby-remark-images`,

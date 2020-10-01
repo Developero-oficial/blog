@@ -1,51 +1,70 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
+import { makeStyles } from "@material-ui/core/styles"
+import Typography from "@material-ui/core/Typography"
+import Grid from "@material-ui/core/Grid"
+import Box from "@material-ui/core/Box"
+import Link from "@material-ui/core/Link"
+import YouTubeIcon from "@material-ui/icons/YouTube"
+import GitHubIcon from "@material-ui/icons/GitHub"
+import FacebookIcon from "@material-ui/icons/Facebook"
 
-import './footer.module.css'
+const useStyles = makeStyles(theme => ({
+  container: {
+    paddingBottom: theme.spacing(2),
+    borderTop: `2px solid #00ed65`,
+  },
+  link: {
+    textDecoration: "none",
+  },
+}))
 
-import { secondaryColor } from '../../utils/theme'
+export const Footer = ({ socialLinks }) => {
+  const classes = useStyles()
 
-export const Footer = ({ socialLinks, children, styles = {} }) => {
   return (
-    <footer style={styles}>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={socialLinks.youtube}
-            data-testid="link-social-youtube"
-            style={{ color: secondaryColor }}>
-            YouTube
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={socialLinks.facebook}
-            data-testid="link-social-facebook"
-            style={{ color: secondaryColor }}>
-            Facebook
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={socialLinks.github}
-            data-testid="link-social-github"
-            style={{ color: secondaryColor }}
+    <Box my={8}>
+      <Grid container className={classes.container} spacing={1}>
+        <Grid item xs={12}>
+          <Box display="flex" justifyContent="center" my={2}>
+            <Link
+              target="_blank"
+              rel="noopener"
+              color="inherit"
+              href={socialLinks.youtube}
+              className={classes.link}
             >
-            Github
-          </a>
-        </li>
-      </ul>
+              <YouTubeIcon fontSize="large" />
+            </Link>
 
-      <div>
-        {children}
-      </div>
-    </footer>
+            <Link
+              target="_blank"
+              rel="noopener"
+              color="inherit"
+              href={socialLinks.github}
+              className={classes.link}
+            >
+              <GitHubIcon fontSize="large" />
+            </Link>
+
+            <Link
+              target="_blank"
+              rel="noopener"
+              color="inherit"
+              href={socialLinks.facebook}
+              className={classes.link}
+            >
+              <FacebookIcon fontSize="large" />
+            </Link>
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography align="center">
+            © {new Date().getFullYear()}, Developero
+          </Typography>
+        </Grid>
+      </Grid>
+    </Box>
   )
 }
 

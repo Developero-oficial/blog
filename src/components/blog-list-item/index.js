@@ -1,3 +1,3 @@
-import { BlogListItem } from './blog-list-item'
+import { BlogListItem } from "./blog-list-item"
 
 export { BlogListItem }

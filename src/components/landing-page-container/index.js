@@ -1,3 +1,3 @@
-import { LandingPageContainer } from './landing-page-container'
+import { LandingPageContainer } from "./landing-page-container"
 
 export { LandingPageContainer }
