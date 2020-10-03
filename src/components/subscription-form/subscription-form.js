@@ -1,19 +1,39 @@
 import React from "react"
+import { makeStyles } from "@material-ui/core/styles"
+import Box from "@material-ui/core/Box"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 
+const useStyle = makeStyles(() => ({
+  title: {
+    color: "#000",
+  },
+}))
+
 export const SubscriptionForm = () => {
+  const classes = useStyle()
+
   return (
     <>
-      <Typography variant="h6" component="h2">
-        Únete al Newsletter 📬 🤓
-      </Typography>
+      <Box my={2}>
+        <Typography
+          className={classes.title}
+          variant="h6"
+          component="h2"
+          align="center"
+        >
+          Únete al Newsletter{"  "}
+          <span role="img" aria-label="mail">
+            📬
+          </span>
+          <span role="img" aria-label="nerd-face">
+            🤓
+          </span>
+        </Typography>
+      </Box>
 
-      <Typography variant="subtitle2" component="h3">
-        Recibe las publicaciones de Developero sobre cómo crear apps con React, Node, Javascript e información útil para lograr tus metas
-      </Typography>
       <form
         id="new_subscriber"
         noValidate="novalidate"
@@ -22,7 +42,7 @@ export const SubscriptionForm = () => {
         method="post"
         target="_blank"
       >
-        <Grid container spacing={2}>
+        <Grid container spacing={3}>
           <input name="utf8" type="hidden" value="&#x2713;" />
 
           <Grid item xs={12}>
@@ -32,6 +52,7 @@ export const SubscriptionForm = () => {
               type="email"
               name="subscriber[email]"
               id="subscriber_email"
+              variant="filled"
             />
           </Grid>
 
@@ -42,6 +63,7 @@ export const SubscriptionForm = () => {
               type="text"
               name="subscriber[name]"
               id="subscriber_name"
+              variant="filled"
             />
           </Grid>
 
