@@ -8,7 +8,11 @@ export const SubscriptionForm = () => {
   return (
     <>
       <Typography variant="h6" component="h2">
-        Unirme al Newsletter
+        Únete al Newsletter 📬 🤓
+      </Typography>
+
+      <Typography variant="subtitle2" component="h3">
+        Recibe las publicaciones de Developero sobre cómo crear apps con React, Node, Javascript e información útil para lograr tus metas
       </Typography>
       <form
         id="new_subscriber"

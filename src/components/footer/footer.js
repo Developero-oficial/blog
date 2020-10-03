@@ -15,6 +15,7 @@ const useStyles = makeStyles(theme => ({
   container: {
     marginTop: theme.spacing(4),
     paddingBottom: theme.spacing(2),
+    // paddingTop: theme.spacing(2),
     borderTop: `2px solid #00ed65`,
   },
   link: {
@@ -28,7 +29,7 @@ export const Footer = ({ socialLinks }) => {
   const classes = useStyles()
 
   return (
-    <Grid container className={classes.container} spacing={1}>
+    <Grid container className={classes.container} spacing={4}>
       <Grid item xs={12} md={6}>
         <SubscriptionForm />
       </Grid>
