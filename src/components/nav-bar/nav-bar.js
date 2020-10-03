@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link as GatsbyLink } from "gatsby"
+import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
@@ -92,42 +93,44 @@ const NavBar = ({ location, width }) => {
 
   return (
     <Toolbar component="nav" variant="dense" className={classes.toolbar}>
-      <Grid
-        container
-        alignItems="center"
-        alignContent="center"
-        justify="space-between"
-      >
-        <Grid item xs={2}>
-          <Typography variant="h5" variantMapping={{ h5: "h1" }}>
-            <Link to="/" component={GatsbyLink} className={classes.brandLink}>
-              Developero
-            </Link>
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Grid container spacing={1}>
-            {width === "xs" ? renderDrawIcon() : renderLinks()}
-          </Grid>
-        </Grid>
-
-        <SwipeableDrawer
-          anchor="left"
-          open={open}
-          onOpen={handleDrawerOpen}
-          onClose={handleDrawerClose}
+      <Container maxWidth="md">
+        <Grid
+          container
+          alignItems="center"
+          alignContent="center"
+          justify="space-between"
         >
-          <List>
-            {navBarLinks.map(({ path, label }) => (
-              <ListItem button key={label}>
-                <Link to={path} component={GatsbyLink}>
-                  {label}
-                </Link>
-              </ListItem>
-            ))}
-          </List>
-        </SwipeableDrawer>
-      </Grid>
+          <Grid item xs={2}>
+            <Typography variant="h5" variantMapping={{ h5: "h1" }}>
+              <Link to="/" component={GatsbyLink} className={classes.brandLink}>
+                Developero
+              </Link>
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Grid container spacing={1}>
+              {width === "xs" ? renderDrawIcon() : renderLinks()}
+            </Grid>
+          </Grid>
+
+          <SwipeableDrawer
+            anchor="left"
+            open={open}
+            onOpen={handleDrawerOpen}
+            onClose={handleDrawerClose}
+          >
+            <List>
+              {navBarLinks.map(({ path, label }) => (
+                <ListItem button key={label}>
+                  <Link to={path} component={GatsbyLink}>
+                    {label}
+                  </Link>
+                </ListItem>
+              ))}
+            </List>
+          </SwipeableDrawer>
+        </Grid>
+      </Container>
     </Toolbar>
   )
 }
