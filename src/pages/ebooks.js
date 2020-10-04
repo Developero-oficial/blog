@@ -23,6 +23,7 @@ import { useSubscriptionUrls } from "../hooks/useSubscriptionUrls"
 import ebook from "../../content/assets/ebook.svg"
 import patronesAvanzadosImg from "../../content/assets/patrones-avanzados-react.svg"
 import reactHooks from "../../content/assets/react-hooks.svg"
+import coverImg from "../../content/assets/developero-ebooks-op-cover.png"
 
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
@@ -73,6 +74,7 @@ const Ebooks = ({ data, location }) => {
         title="Ebooks Developero"
         description="Mejora tus habilidades de desarrollo de software con los ebooks de Developero. React, Node, Javascript y más."
         url={`${siteUrl}/ebooks`}
+        img={coverImg}
       />
       <Layout location={location} social={social}>
         <Box my={4}>
