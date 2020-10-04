@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
@@ -11,6 +11,14 @@ import CardActionArea from "@material-ui/core/CardActionArea"
 import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import CardMedia from "@material-ui/core/CardMedia"
+import Dialog from "@material-ui/core/Dialog"
+import DialogActions from "@material-ui/core/DialogActions"
+import DialogContent from "@material-ui/core/DialogContent"
+import DialogContentText from "@material-ui/core/DialogContentText"
+import DialogTitle from "@material-ui/core/DialogTitle"
+
+import { SubscriptionForm } from "../components/subscription-form"
+import { useSubscriptionUrls } from "../hooks/useSubscriptionUrls"
 
 import ebook from "../../content/assets/ebook.svg"
 import patronesAvanzadosImg from "../../content/assets/patrones-avanzados-react.svg"
@@ -48,6 +56,16 @@ const Ebooks = ({ data, location }) => {
   const { social, siteUrl } = data.site.siteMetadata
   const classes = useStyles()
   const isMobile = useMediaQuery("(max-width:600px)")
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const { reactHooksManualEbook } = useSubscriptionUrls()
+
+  const handleClickOpen = () => {
+    setIsDialogOpen(true)
+  }
+
+  const handleClose = () => {
+    setIsDialogOpen(false)
+  }
 
   return (
     <>
@@ -139,6 +157,14 @@ const Ebooks = ({ data, location }) => {
               <CardActions>
                 <Button
                   variant="contained"
+                  color="secondary"
+                  fullWidth
+                  onClick={handleClickOpen}
+                >
+                  Descargar
+                </Button>
+                <Button
+                  variant="contained"
                   color="primary"
                   fullWidth
                   href="https://amzn.to/2Gh1fdo"
@@ -206,6 +232,27 @@ const Ebooks = ({ data, location }) => {
             </Card>
           </Grid>
         </Grid>
+
+        <Dialog
+          open={isDialogOpen}
+          onClose={handleClose}
+          aria-labelledby="formulario-descargar-ebook"
+        >
+          <DialogTitle>Descargar Ebook GRATIS</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Proporciona tu dirección de correo electrónico para suscribirte y
+              obtener este ebook gratis.
+            </DialogContentText>
+            <SubscriptionForm
+              actionUrl={reactHooksManualEbook}
+              label="Obtendrás el ebook al confirmar tu suscripción"
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Cancelar</Button>
+          </DialogActions>
+        </Dialog>
       </Layout>
     </>
   )
