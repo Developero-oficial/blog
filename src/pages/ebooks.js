@@ -6,6 +6,11 @@ import Box from "@material-ui/core/Box"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
+import Card from "@material-ui/core/Card"
+import CardActionArea from "@material-ui/core/CardActionArea"
+import CardActions from "@material-ui/core/CardActions"
+import CardContent from "@material-ui/core/CardContent"
+import CardMedia from "@material-ui/core/CardMedia"
 
 import ebook from "../../content/assets/ebook.svg"
 import patronesAvanzadosImg from "../../content/assets/patrones-avanzados-react.svg"
@@ -17,7 +22,6 @@ import { SEO } from "../components/seo"
 const useStyles = makeStyles(theme => ({
   mainContent: {
     paddingBottom: theme.spacing(2),
-    borderBottom: `2px solid #00ed65`,
   },
   hooksBook: {
     backgroundColor: "#FFFEFC",
@@ -25,13 +29,18 @@ const useStyles = makeStyles(theme => ({
   reactPatternsBook: {
     backgroundColor: "#0F1B35",
     color: "#ffffff",
-    borderRadius: 5,
-    paddingTop: theme.spacing(1),
   },
   img: {
     maxWidth: "70%",
     height: "auto",
     borderRadius: 5,
+  },
+  coverImg: {
+    maxWidth: "80%",
+    height: "auto",
+    borderRadius: 5,
+    margin: "auto",
+    paddingTop: "8px",
   },
 }))
 
@@ -42,7 +51,10 @@ const Ebooks = ({ data, location }) => {
 
   return (
     <>
-      <SEO title="Developero" />
+      <SEO
+        title="Ebooks Developero"
+        description="Mejora tus habilidades de desarrollo de software con los ebooks de Developero. React, Node, JAvascript y más."
+      />
       <Layout location={location} social={social}>
         <Box my={4}>
           <Grid container>
@@ -64,7 +76,9 @@ const Ebooks = ({ data, location }) => {
                   </Typography>
 
                   <Typography gutterBottom align={isMobile ? "center" : "left"}>
-                    Ebooks de desarrollo de software en formatos Pdf y Kindle.
+                    Mejora tus hablidades de desarrollo de software con estos
+                    ebooks que te guiarán paso a paso. Algunos de ellos son
+                    gratuitos.
                   </Typography>
                 </Box>
               </Grid>
@@ -78,54 +92,117 @@ const Ebooks = ({ data, location }) => {
           </Grid>
         </Box>
 
-        <Grid container justify="space-around">
-          <Grid item xs={12} md={5} className={classes.hooksBook}>
-            <Box my={4}>
-              <Typography variant="h6" component="h2" align="center">
-                React Hooks Manual Desde Cero
-              </Typography>
-            </Box>
-
-            <Box display="flex" justifyContent="center">
-              <img className={classes.img} src={reactHooks} alt="react-hooks" />
-            </Box>
-
-            <Box my={2} display="flex" justifyContent="center">
-              <Button
-                variant="contained"
-                color="secondary"
-                href="https://amzn.to/2Gh1fdo"
-                target="_blank"
-              >
-                Leer Ahora
-              </Button>
-            </Box>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={6}>
+            <Card className={classes.hooksBook}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  alt="react-hooks"
+                  image={reactHooks}
+                  title="React Hooks Manual Desde Cero"
+                  classes={{
+                    img: classes.coverImg,
+                  }}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    React Hooks Manual Desde Cero
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    <span role="img" aria-label="check">
+                      ✅
+                    </span>{" "}
+                    Conoce los por qué, cómo y en qué casos aplicar cada hook.
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    <span role="img" aria-label="check">
+                      ✅
+                    </span>{" "}
+                    Buenas prácticas de código.
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    <span role="img" aria-label="check">
+                      ✅
+                    </span>{" "}
+                    Acceso a ejemplos con código fuente ejecutable y editable.
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    <span role="img" aria-label="check">
+                      ✅
+                    </span>{" "}
+                    Acceso a ejemplos con código fuente ejecutable y editable.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  href="https://amzn.to/2Gh1fdo"
+                  target="_blank"
+                >
+                  Leer Ahora
+                </Button>
+              </CardActions>
+            </Card>
           </Grid>
-          <Grid item xs={12} md={5} className={classes.reactPatternsBook}>
-            <Box my={4}>
-              <Typography variant="h6" component="h2" align="center">
-                Patrones Avanzados en React JS
-              </Typography>
-            </Box>
 
-            <Box display="flex" justifyContent="center">
-              <img
-                className={classes.img}
-                src={patronesAvanzadosImg}
-                alt="patrones-avanzados-react"
-              />
-            </Box>
-
-            <Box my={2} display="flex" justifyContent="center">
-              <Button
-                variant="contained"
-                color="secondary"
-                href="https://amzn.to/2HRXhZj"
-                target="_blank"
-              >
-                Leer Ahora
-              </Button>
-            </Box>
+          <Grid item xs={12} md={6}>
+            <Card className={classes.reactPatternsBook}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  alt="patrones avanzados en react js"
+                  image={patronesAvanzadosImg}
+                  title="Patrones Avanzados En React JS"
+                  classes={{
+                    img: classes.coverImg,
+                  }}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Patrones Avanzados En React JS
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    <span role="img" aria-label="check">
+                      ✅
+                    </span>{" "}
+                    Aprende a usar los patrones avanzados de UI.
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    <span role="img" aria-label="check">
+                      ✅
+                    </span>{" "}
+                    Aprende a usar los patrones avanzados de lógica.
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    <span role="img" aria-label="check">
+                      ✅
+                    </span>{" "}
+                    Refactorizaciones de componentes.
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    <span role="img" aria-label="check">
+                      ✅
+                    </span>{" "}
+                    Acceso a ejemplos con código fuente ejecutable y editable.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  href="https://amzn.to/2HRXhZj"
+                  target="_blank"
+                  fullWidth
+                >
+                  Leer Ahora
+                </Button>
+              </CardActions>
+            </Card>
           </Grid>
         </Grid>
       </Layout>
