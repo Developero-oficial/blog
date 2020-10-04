@@ -35,6 +35,13 @@ const useStyles = makeStyles(theme => ({
     height: "auto",
     borderRadius: 5,
   },
+  coverImg: {
+    maxWidth: "80%",
+    height: "auto",
+    borderRadius: 5,
+    margin: "auto",
+    paddingTop: "8px",
+  },
 }))
 
 const Ebooks = ({ data, location }) => {
@@ -94,6 +101,9 @@ const Ebooks = ({ data, location }) => {
                   alt="react-hooks"
                   image={reactHooks}
                   title="React Hooks Manual Desde Cero"
+                  classes={{
+                    img: classes.coverImg,
+                  }}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -147,6 +157,9 @@ const Ebooks = ({ data, location }) => {
                   alt="patrones avanzados en react js"
                   image={patronesAvanzadosImg}
                   title="Patrones Avanzados En React JS"
+                  classes={{
+                    img: classes.coverImg,
+                  }}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
