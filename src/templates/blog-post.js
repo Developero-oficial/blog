@@ -21,6 +21,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        img={post.frontmatter.coverImage.publicURL}
+        url={socialUrl}
       />
       <Layout
         location={location}

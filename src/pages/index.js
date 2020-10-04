@@ -17,7 +17,6 @@ import img from "../../content/assets/img.svg"
 const useStyles = makeStyles(theme => ({
   mainContent: {
     paddingBottom: theme.spacing(2),
-    borderBottom: `2px solid #00ed65`,
   },
   cover: {
     width: "100%",
@@ -35,24 +34,28 @@ const useStyles = makeStyles(theme => ({
 
 const learn = [
   {
-    name: "Buenas prácticas",
+    name: "Desarrollar apps del mundo real",
   },
   {
-    name: "Unit Testing",
+    name: "Aplicar las buenas prácticas de desarrollo de software",
   },
   {
-    name: "Principios SOLID",
+    name: "Aprender los conceptos básicos de tecnologías",
   },
 ]
 
 const BlogIndex = ({ data, location }) => {
-  const { social } = data.site.siteMetadata
+  const { social, siteUrl } = data.site.siteMetadata
   const classes = useStyles()
   const isMobile = useMediaQuery("(max-width:600px)")
 
   return (
     <>
-      <SEO title="Developero" />
+      <SEO
+        title="Developero"
+        description="Ebooks, Cursos, Tutoriales, Videos y más sobre ✅ DESARROLLO  DE SOFTWARE Y APPS DEL MUNDO REAL en Developero"
+        url={siteUrl}
+      />
       <Layout location={location} social={social}>
         <Grid container>
           <Grid
@@ -80,11 +83,11 @@ const BlogIndex = ({ data, location }) => {
                 variant="contained"
                 color="primary"
                 component={GatsbyLink}
-                to="/blog"
+                to="/ebooks"
                 fullWidth={isMobile}
                 className={classes.marginTop}
               >
-                Ver Posts
+                Ver Ebooks
               </Button>
             </Grid>
             <Grid item xs={12} md={6}>
@@ -109,7 +112,7 @@ const BlogIndex = ({ data, location }) => {
           </Grid>
           <Grid item xs={12}>
             <Typography gutterBottom variant="h5" component="h2" align="center">
-              Aquí aprenderás:
+              Aquí aprenderás a:
             </Typography>
           </Grid>
 
@@ -146,6 +149,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        siteUrl
         social {
           youtube
           facebook
