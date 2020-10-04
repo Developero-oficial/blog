@@ -10,6 +10,7 @@ type Data = {
     siteMetadata: {
       title: string
       description: string
+      siteUrl: string
       social: {
         youtube: string
         facebook: string
@@ -35,12 +36,15 @@ type Data = {
 }
 
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
-  const { social } = data.site.siteMetadata
+  const { social, siteUrl } = data.site.siteMetadata
   const posts = data.allMarkdownRemark.edges
 
   return (
     <>
-      <SEO title="Developero" />
+      <SEO
+        title="Blog - Developero"
+        url={`${siteUrl}/blog`}
+      />
       <Layout location={location} social={social}>
         <BlogContainer posts={posts} />
       </Layout>
@@ -56,6 +60,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        siteUrl
         social {
           youtube
           facebook

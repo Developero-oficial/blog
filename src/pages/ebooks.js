@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Ebooks = ({ data, location }) => {
-  const { social } = data.site.siteMetadata
+  const { social, siteUrl } = data.site.siteMetadata
   const classes = useStyles()
   const isMobile = useMediaQuery("(max-width:600px)")
 
@@ -53,7 +53,8 @@ const Ebooks = ({ data, location }) => {
     <>
       <SEO
         title="Ebooks Developero"
-        description="Mejora tus habilidades de desarrollo de software con los ebooks de Developero. React, Node, JAvascript y más."
+        description="Mejora tus habilidades de desarrollo de software con los ebooks de Developero. React, Node, Javascript y más."
+        url={`${siteUrl}/ebooks`}
       />
       <Layout location={location} social={social}>
         <Box my={4}>
@@ -218,6 +219,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        siteUrl
         social {
           youtube
           facebook
