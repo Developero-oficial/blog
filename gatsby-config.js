@@ -12,6 +12,11 @@ module.exports = {
       facebook: "https://www.facebook.com/DeveloperoOficial/",
       github: "https://github.com/Developero-oficial",
     },
+    subscriptionUrls: {
+      feeds: "https://developero.ipzmarketing.com/f/adJdhFI4A9w",
+      reactHooksManualEbook:
+        "https://developero.ipzmarketing.com/f/YhELNu9F9IU",
+    },
   },
   plugins: [
     `gatsby-plugin-material-ui`,

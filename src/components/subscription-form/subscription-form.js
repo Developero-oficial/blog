@@ -6,14 +6,23 @@ import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 
+import { useSubscriptionUrls } from "../../hooks/useSubscriptionUrls"
+
 const useStyle = makeStyles(() => ({
   title: {
     color: "#000",
   },
 }))
 
-export const SubscriptionForm = () => {
+export const SubscriptionForm = ({
+  actionUrl,
+  label = "Únete al Newsletter",
+}) => {
   const classes = useStyle()
+
+  const { feeds } = useSubscriptionUrls()
+
+  const action = actionUrl || feeds
 
   return (
     <>
@@ -24,7 +33,8 @@ export const SubscriptionForm = () => {
           component="h2"
           align="center"
         >
-          Únete al Newsletter{"  "}
+          {label}
+          {"  "}
           <span role="img" aria-label="mail">
             📬
           </span>
@@ -37,7 +47,7 @@ export const SubscriptionForm = () => {
       <form
         id="new_subscriber"
         noValidate="novalidate"
-        action="https://developero.ipzmarketing.com/f/adJdhFI4A9w"
+        action={action}
         acceptCharset="UTF-8"
         method="post"
         target="_blank"
