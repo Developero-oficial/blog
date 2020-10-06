@@ -75,11 +75,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               <SocialShare url={socialUrl} title={post.frontmatter.title} />
             </Grid>
 
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12}>
               <Divider />
             </Grid>
 
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12}>
               <nav>
                 <ul
                   style={{
