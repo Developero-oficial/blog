@@ -108,6 +108,13 @@ module.exports = {
         icon: `content/assets/favicon.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/awesome-sitemap.xml`,
+        exclude: ['/about/', '/blog/'],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
