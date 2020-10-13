@@ -45,7 +45,7 @@ const learn = [
 ]
 
 const BlogIndex = ({ data, location }) => {
-  const { social, siteUrl } = data.site.siteMetadata
+  const { siteUrl, description } = data.site.siteMetadata
   const classes = useStyles()
   const isMobile = useMediaQuery("(max-width:600px)")
 
@@ -53,10 +53,10 @@ const BlogIndex = ({ data, location }) => {
     <>
       <SEO
         title="Developero"
-        description="Ebooks, Cursos, Tutoriales, Videos y más sobre ✅ DESARROLLO  DE SOFTWARE Y APPS DEL MUNDO REAL en Developero"
+        description={description}
         url={siteUrl}
       />
-      <Layout location={location} social={social}>
+      <Layout location={location}>
         <Grid container>
           <Grid
             container
@@ -150,11 +150,6 @@ export const pageQuery = graphql`
         title
         description
         siteUrl
-        social {
-          youtube
-          facebook
-          github
-        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

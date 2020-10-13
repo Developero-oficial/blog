@@ -9,21 +9,16 @@ import { SEO } from "../components/seo"
 import screenshotFan from "../../static/screenshot-fan.png"
 
 const AboutPage = ({ data, location }) => {
-  const { title, description, social } = data.site.siteMetadata
+  const { social } = data.site.siteMetadata
 
   return (
     <>
-      <SEO title="Sobre el autor" />
-      <Layout
-        location={location}
-        title={title}
-        description={description}
-        social={social}
-      >
+      <SEO title="Acerca de" />
+      <Layout location={location}>
         <Grid container justify="center" spacing={5} style={{ marginTop: 16 }}>
           <Grid item xs={12} md={8}>
             <Typography variant="h4" component="h1" gutterBottom>
-              Sobre el autor
+              Acerca de Developero
             </Typography>
 
             <Typography gutterBottom paragraph>

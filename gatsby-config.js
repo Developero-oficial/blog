@@ -5,7 +5,7 @@ module.exports = {
       name: `Juan Correa`,
       summary: `autodidacta, curioso y apasionado en el desarrollo de software`,
     },
-    description: `Cursos y tutoriales de programación`,
+    description: `Ebooks, Cursos, Tutoriales, Videos y más sobre ✅ DESARROLLO  DE SOFTWARE Y APPS DEL MUNDO REAL en Developero`,
     siteUrl: `https://developero.io`,
     social: {
       youtube: `https://www.youtube.com/c/developero`,
