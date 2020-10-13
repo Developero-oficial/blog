@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Ebooks = ({ data, location }) => {
-  const { social, siteUrl } = data.site.siteMetadata
+  const { siteUrl } = data.site.siteMetadata
   const classes = useStyles()
   const isMobile = useMediaQuery("(max-width:600px)")
   const [isDialogOpen, setIsDialogOpen] = useState(false)
@@ -76,7 +76,7 @@ const Ebooks = ({ data, location }) => {
         url={`${siteUrl}/ebooks`}
         img={coverImg}
       />
-      <Layout location={location} social={social}>
+      <Layout location={location}>
         <Box my={4}>
           <Grid container>
             <Grid
@@ -246,7 +246,9 @@ const Ebooks = ({ data, location }) => {
               Proporciona tu dirección de correo electrónico para suscribirte y
               obtener este ebook gratis.
             </DialogContentText>
-            <Typography align="center">Tip: Revisa tu carpeta de SPAM</Typography>
+            <Typography align="center">
+              Tip: Revisa tu carpeta de SPAM
+            </Typography>
             <SubscriptionForm
               actionUrl={reactHooksManualEbook}
               label="Obtendrás el ebook al confirmar tu suscripción"
@@ -267,14 +269,7 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
-        description
         siteUrl
-        social {
-          youtube
-          facebook
-          github
-        }
       }
     }
   }

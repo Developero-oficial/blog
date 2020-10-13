@@ -9,21 +9,16 @@ import { SEO } from "../components/seo"
 import screenshotFan from "../../static/screenshot-fan.png"
 
 const AboutPage = ({ data, location }) => {
-  const { title, description, social } = data.site.siteMetadata
+  const { social } = data.site.siteMetadata
 
   return (
     <>
-      <SEO title="Sobre el autor" />
-      <Layout
-        location={location}
-        title={title}
-        description={description}
-        social={social}
-      >
+      <SEO title="Acerca de" />
+      <Layout location={location}>
         <Grid container justify="center" spacing={5} style={{ marginTop: 16 }}>
           <Grid item xs={12} md={8}>
             <Typography variant="h4" component="h1" gutterBottom>
-              Sobre el autor
+              Acerca de Developero
             </Typography>
 
             <Typography gutterBottom paragraph>
@@ -109,30 +104,28 @@ const AboutPage = ({ data, location }) => {
           </Grid>
 
           <Grid item xs={12} md={8}>
-            <figure>
-              <img
-                src={screenshotFan}
-                alt="Captura de pantalla fan"
-                style={{
-                  display: `block`,
-                  margin: `1.5em auto`,
-                }}
-              />
-              <figcaption
-                style={{
-                  textAlign: `center`,
-                }}
+            <img
+              src={screenshotFan}
+              alt="Captura de pantalla fan"
+              style={{
+                width: `100%`,
+                height: `100%`,
+              }}
+            />
+            <figcaption
+              style={{
+                textAlign: `center`,
+              }}
+            >
+              Captura de pantalla{" "}
+              <a
+                href="https://www.facebook.com/DeveloperoOficial/photos/a.497228547148752/652144578323814/?type=3&theater"
+                target="_blank"
+                rel="noreferrer"
               >
-                Captura de pantalla{" "}
-                <a
-                  href="https://www.facebook.com/DeveloperoOficial/photos/a.497228547148752/652144578323814/?type=3&theater"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  tomada el 23 de Junio del 2017.
-                </a>
-              </figcaption>
-            </figure>
+                tomada el 23 de Junio del 2017.
+              </a>
+            </figcaption>
           </Grid>
 
           <Grid item xs={12} md={8}>

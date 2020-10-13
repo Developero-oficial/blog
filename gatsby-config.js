@@ -5,7 +5,7 @@ module.exports = {
       name: `Juan Correa`,
       summary: `autodidacta, curioso y apasionado en el desarrollo de software`,
     },
-    description: `Cursos y tutoriales de programación`,
+    description: `Ebooks, Cursos, Tutoriales, Videos y más sobre ✅ DESARROLLO  DE SOFTWARE Y APPS DEL MUNDO REAL en Developero`,
     siteUrl: `https://developero.io`,
     social: {
       youtube: `https://www.youtube.com/c/developero`,
@@ -75,11 +75,13 @@ module.exports = {
             resolve: `gatsby-remark-classes`,
             options: {
               classMap: {
-                "heading[depth=1]": "MuiBox-root MuiBox-root-2 MuiTypography-h4 MuiTypography-colorTextPrimary",
-                "heading[depth=2]": "MuiBox-root MuiBox-root-2 MuiTypography-h5 MuiTypography-colorTextPrimary",
+                "heading[depth=1]":
+                  "MuiBox-root MuiBox-root-2 MuiTypography-h4 MuiTypography-colorTextPrimary",
+                "heading[depth=2]":
+                  "MuiBox-root MuiBox-root-2 MuiTypography-h5 MuiTypography-colorTextPrimary",
                 paragraph: "MuiTypography-body1 MuiTypography-gutterBottom",
-              }
-            }
+              },
+            },
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
@@ -112,7 +114,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/awesome-sitemap.xml`,
-        exclude: ['/about/', '/blog/'],
+        exclude: ["/about/", "/blog/", "/confirm/"],
       },
     },
     `gatsby-plugin-react-helmet`,

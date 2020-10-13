@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+import { graphql, useStaticQuery } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
@@ -35,8 +35,24 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export const Footer = ({ socialLinks }) => {
+export const Footer = () => {
   const classes = useStyles()
+
+  const data = useStaticQuery(graphql`
+    query FooterQuery {
+      site {
+        siteMetadata {
+          social {
+            youtube
+            facebook
+            github
+          }
+        }
+      }
+    }
+  `)
+
+  const { youtube, facebook, github } = data.site.siteMetadata.social
 
   return (
     <div className={classes.container}>
@@ -51,7 +67,7 @@ export const Footer = ({ socialLinks }) => {
                 target="_blank"
                 rel="noopener"
                 color="inherit"
-                href={socialLinks.youtube}
+                href={youtube}
                 className={classes.link}
               >
                 <YouTubeIcon fontSize="large" />
@@ -61,7 +77,7 @@ export const Footer = ({ socialLinks }) => {
                 target="_blank"
                 rel="noopener"
                 color="inherit"
-                href={socialLinks.github}
+                href={github}
                 className={classes.link}
               >
                 <GitHubIcon fontSize="large" />
@@ -71,7 +87,7 @@ export const Footer = ({ socialLinks }) => {
                 target="_blank"
                 rel="noopener"
                 color="inherit"
-                href={socialLinks.facebook}
+                href={facebook}
                 className={classes.link}
               >
                 <FacebookIcon fontSize="large" />
@@ -87,12 +103,4 @@ export const Footer = ({ socialLinks }) => {
       </Container>
     </div>
   )
-}
-
-Footer.propTypes = {
-  socialLinks: PropTypes.shape({
-    youtube: PropTypes.string.isRequired,
-    facebook: PropTypes.string.isRequired,
-    github: PropTypes.string.isRequired,
-  }).isRequired,
 }

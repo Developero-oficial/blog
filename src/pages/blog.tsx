@@ -36,7 +36,7 @@ type Data = {
 }
 
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
-  const { social, siteUrl } = data.site.siteMetadata
+  const { siteUrl } = data.site.siteMetadata
   const posts = data.allMarkdownRemark.edges
 
   return (
@@ -45,7 +45,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         title="Blog - Developero"
         url={`${siteUrl}/blog`}
       />
-      <Layout location={location} social={social}>
+      <Layout location={location}>
         <BlogContainer posts={posts} />
       </Layout>
     </>
@@ -61,11 +61,6 @@ export const pageQuery = graphql`
         title
         description
         siteUrl
-        social {
-          youtube
-          facebook
-          github
-        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
