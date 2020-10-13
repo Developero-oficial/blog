@@ -8,7 +8,7 @@ import { Footer } from "../footer"
 
 import { theme } from "../../utils/theme"
 
-const Layout = ({ location, social, children }) => {
+const Layout = ({ location, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -17,7 +17,7 @@ const Layout = ({ location, social, children }) => {
         <main>{children}</main>
       </Container>
 
-      <Footer socialLinks={social} />
+      <Footer />
     </ThemeProvider>
   )
 }

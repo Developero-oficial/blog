@@ -112,7 +112,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/awesome-sitemap.xml`,
-        exclude: ['/about/', '/blog/'],
+        exclude: ['/about/', '/blog/', '/confirm/'],
       },
     },
     `gatsby-plugin-react-helmet`,
