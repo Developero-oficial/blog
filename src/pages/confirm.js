@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
 
-export default function ConfirmPage ({ location }) {
+export default function ConfirmPage({ location }) {
   return (
     <>
       <SEO title="Confirmar suscripción" />
@@ -28,7 +28,8 @@ export default function ConfirmPage ({ location }) {
             </Typography>
 
             <Typography align="center" gutterBottom>
-              ¿Quieres descubrirla? Abre el email cuanto antes. Tip: Revisa carpeta de spam.
+              ¿Quieres descubrirla? Abre el email cuanto antes. Tip: Revisa
+              carpeta de spam.
             </Typography>
           </Grid>
           <Grid item xs={12} md={10}>
@@ -36,13 +37,15 @@ export default function ConfirmPage ({ location }) {
               2. La carrera de desarrollo de software es <b>un gran reto.</b>
             </Typography>
             <Typography align="center" gutterBottom>
-              ¿Quieres superarla? Forja la habilidad de ser <b>autodidacta y nunca te conformes con lo que sabes y tienes</b>,
+              ¿Quieres superarla? Forja la habilidad de ser{" "}
+              <b>autodidacta y nunca te conformes con lo que sabes y tienes</b>,
               de ahora en adelante.
             </Typography>
           </Grid>
           <Grid item xs={12} md={10}>
             <Typography align="center" gutterBottom>
-              3. Uno de los <b>mayores secretos de mi éxito</b> es que comparto gratuitamente muchísima información de valor.
+              3. Uno de los <b>mayores secretos de mi éxito</b> es que comparto
+              gratuitamente muchísima información de valor.
             </Typography>
             <Typography align="center" gutterBottom>
               ¿Quieres tener éxito? Comienza ayudando a otros.
@@ -56,7 +59,7 @@ export default function ConfirmPage ({ location }) {
             <Grid container spacing={1} justify="space-between">
               <Grid item>
                 <Button
-                  style={{ backgroundColor: '#4267B2', color: '#ffffff' }}
+                  style={{ backgroundColor: "#4267B2", color: "#ffffff" }}
                   target="_blank"
                   variant="contained"
                   href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopero.io%2F&amp;src=sdkpreparse"
@@ -66,7 +69,7 @@ export default function ConfirmPage ({ location }) {
               </Grid>
               <Grid item>
                 <Button
-                  style={{ backgroundColor: '#0e76a8', color: '#ffffff' }}
+                  style={{ backgroundColor: "#0e76a8", color: "#ffffff" }}
                   target="_blank"
                   variant="contained"
                   href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fdevelopero.io%2F&amp;&source=developero.io"
@@ -76,7 +79,7 @@ export default function ConfirmPage ({ location }) {
               </Grid>
               <Grid item>
                 <Button
-                  style={{ backgroundColor: '#4AC959', color: '#ffffff' }}
+                  style={{ backgroundColor: "#4AC959", color: "#ffffff" }}
                   target="_blank"
                   variant="contained"
                   href="https://api.whatsapp.com/send?text=Esto te puede interesar: https%3A%2F%2Fdevelopero.io%2F&amp;"

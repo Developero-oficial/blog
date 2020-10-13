@@ -109,7 +109,7 @@ const AboutPage = ({ data, location }) => {
               alt="Captura de pantalla fan"
               style={{
                 width: `100%`,
-                height: `100%`
+                height: `100%`,
               }}
             />
             <figcaption

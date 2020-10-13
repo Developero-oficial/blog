@@ -75,11 +75,13 @@ module.exports = {
             resolve: `gatsby-remark-classes`,
             options: {
               classMap: {
-                "heading[depth=1]": "MuiBox-root MuiBox-root-2 MuiTypography-h4 MuiTypography-colorTextPrimary",
-                "heading[depth=2]": "MuiBox-root MuiBox-root-2 MuiTypography-h5 MuiTypography-colorTextPrimary",
+                "heading[depth=1]":
+                  "MuiBox-root MuiBox-root-2 MuiTypography-h4 MuiTypography-colorTextPrimary",
+                "heading[depth=2]":
+                  "MuiBox-root MuiBox-root-2 MuiTypography-h5 MuiTypography-colorTextPrimary",
                 paragraph: "MuiTypography-body1 MuiTypography-gutterBottom",
-              }
-            }
+              },
+            },
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
@@ -112,7 +114,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/awesome-sitemap.xml`,
-        exclude: ['/about/', '/blog/', '/confirm/'],
+        exclude: ["/about/", "/blog/", "/confirm/"],
       },
     },
     `gatsby-plugin-react-helmet`,

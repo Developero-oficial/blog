@@ -51,11 +51,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <>
-      <SEO
-        title="Developero"
-        description={description}
-        url={siteUrl}
-      />
+      <SEO title="Developero" description={description} url={siteUrl} />
       <Layout location={location}>
         <Grid container>
           <Grid

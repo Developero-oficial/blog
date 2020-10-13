@@ -246,7 +246,9 @@ const Ebooks = ({ data, location }) => {
               Proporciona tu dirección de correo electrónico para suscribirte y
               obtener este ebook gratis.
             </DialogContentText>
-            <Typography align="center">Tip: Revisa tu carpeta de SPAM</Typography>
+            <Typography align="center">
+              Tip: Revisa tu carpeta de SPAM
+            </Typography>
             <SubscriptionForm
               actionUrl={reactHooksManualEbook}
               label="Obtendrás el ebook al confirmar tu suscripción"

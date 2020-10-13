@@ -43,7 +43,7 @@ export const Footer = () => {
       site {
         siteMetadata {
           social {
-            youtube,
+            youtube
             facebook
             github
           }
@@ -52,11 +52,7 @@ export const Footer = () => {
     }
   `)
 
-  const {
-    youtube,
-    facebook,
-    github,
-  } = data.site.siteMetadata.social
+  const { youtube, facebook, github } = data.site.siteMetadata.social
 
   return (
     <div className={classes.container}>
