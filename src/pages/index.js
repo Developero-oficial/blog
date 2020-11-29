@@ -75,16 +75,26 @@ const BlogIndex = ({ data, location }) => {
                 personales como desarrolladores de software.
               </Typography>
 
-              <Button
-                variant="contained"
-                color="primary"
-                component={GatsbyLink}
-                to="/ebooks"
-                fullWidth={isMobile}
-                className={classes.marginTop}
-              >
-                Ver Ebooks
-              </Button>
+              <Box my={2}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  component={GatsbyLink}
+                  to="/courses-premium"
+                  fullWidth={isMobile}
+                >
+                  Ver Cursos
+                </Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  component={GatsbyLink}
+                  to="/ebooks"
+                  fullWidth={isMobile}
+                >
+                  Ver Ebooks
+                </Button>
+              </Box>
             </Grid>
             <Grid item xs={12} md={6}>
               <img src={img} alt="developero" className={classes.cover} />
