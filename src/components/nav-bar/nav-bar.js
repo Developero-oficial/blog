@@ -49,6 +49,10 @@ const navBarLinks = [
     label: "Ebooks",
   },
   {
+    path: "/courses-premium",
+    label: "Cursos premium",
+  },
+  {
     path: "/about",
     label: "Acerca De",
   },
