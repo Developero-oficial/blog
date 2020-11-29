@@ -17,6 +17,10 @@ module.exports = {
       reactHooksManualEbook:
         "https://developero.ipzmarketing.com/f/YhELNu9F9IU",
     },
+    premiumCourses: {
+      tddReact:
+        "https://www.udemy.com/course/tdd-react-js/?referralCode=F40803D2C4D2934AB038",
+    },
   },
   plugins: [
     `gatsby-plugin-material-ui`,

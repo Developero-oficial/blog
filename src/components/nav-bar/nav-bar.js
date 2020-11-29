@@ -37,20 +37,34 @@ const useStyles = makeStyles(theme => ({
   toolbarLinkSelected: {
     backgroundColor: "rgba(0, 0, 0, 0.1)",
   },
+  highlightPrimary: {
+    backgroundColor: theme.palette.primary.main,
+    color: "#ffffff",
+  },
+  highlightSecondary: {
+    backgroundColor: theme.palette.secondary.main,
+    color: "#555555",
+  },
 }))
 
 const navBarLinks = [
+  {
+    path: "/about",
+    label: "Acerca De",
+  },
   {
     path: "/blog",
     label: "Blog",
   },
   {
-    path: "/ebooks",
-    label: "Ebooks",
+    path: "/courses-premium",
+    label: "Cursos premium",
+    highlightPrimary: true,
   },
   {
-    path: "/about",
-    label: "Acerca De",
+    path: "/ebooks",
+    label: "Ebooks",
+    highlightSecondary: true,
   },
 ]
 
@@ -67,10 +81,13 @@ const NavBar = ({ location, width }) => {
   }
 
   const renderLinks = () =>
-    navBarLinks.map(({ path, label }) => {
+    navBarLinks.map(({ path, label, highlightPrimary, highlightSecondary }) => {
       const className = `${classes.toolbarLink} ${
         location.pathname === path && classes.toolbarLinkSelected
-      }`
+      }
+      ${highlightPrimary && classes.highlightPrimary}
+      ${highlightSecondary && classes.highlightSecondary}
+      `
       return (
         <Grid item key={label}>
           <Link component={GatsbyLink} to={path} className={className}>
