@@ -12,6 +12,9 @@ module.exports = {
       facebook: "https://www.facebook.com/DeveloperoOficial/",
       github: "https://github.com/Developero-oficial",
     },
+    friends: {
+      tddreactjs: "http://tddreactjs.com/",
+    },
     subscriptionUrls: {
       feeds: "https://developero.ipzmarketing.com/f/adJdhFI4A9w",
       reactHooksManualEbook:

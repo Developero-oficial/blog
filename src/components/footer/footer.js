@@ -47,12 +47,16 @@ export const Footer = () => {
             facebook
             github
           }
+          friends {
+            tddreactjs
+          }
         }
       }
     }
   `)
 
   const { youtube, facebook, github } = data.site.siteMetadata.social
+  const { tddreactjs } = data.site.siteMetadata.friends
 
   return (
     <div className={classes.container}>
@@ -91,6 +95,22 @@ export const Footer = () => {
                 className={classes.link}
               >
                 <FacebookIcon fontSize="large" />
+              </Link>
+            </Box>
+            <Box display="flex" justifyContent="flex-end" my={2}>
+              <Typography variant="h6" component="h2">
+                Otros Sitios
+              </Typography>
+            </Box>
+            <Box display="flex" justifyContent="flex-end" my={2}>
+              <Link
+                target="_blank"
+                rel="noopener"
+                color="inherit"
+                href={tddreactjs}
+                className={classes.link}
+              >
+                TDD en React JS
               </Link>
             </Box>
           </Grid>
