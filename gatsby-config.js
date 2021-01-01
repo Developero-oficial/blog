@@ -22,7 +22,7 @@ module.exports = {
     },
     premiumCourses: {
       tddReact:
-        "https://www.udemy.com/course/tdd-react-js/?referralCode=F40803D2C4D2934AB038",
+        "https://www.udemy.com/course/tdd-react-js/?couponCode=WEB-DEVELOPERO",
     },
   },
   plugins: [
