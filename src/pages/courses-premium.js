@@ -7,22 +7,28 @@ import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { useTheme } from "@material-ui/core/styles"
-import Card from "@material-ui/core/Card"
-import CardActionArea from "@material-ui/core/CardActionArea"
-import CardActions from "@material-ui/core/CardActions"
-import CardContent from "@material-ui/core/CardContent"
-import CardMedia from "@material-ui/core/CardMedia"
+import Paper from "@material-ui/core/Paper"
+import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline"
 
 import tddReactImg from "../../static/tdd-react.svg"
 import logo from "../../static/Logotipo_original.png"
-import coverImg from "../../content/assets/developero-ebooks-op-cover.png"
+import ogImg from "../../content/assets/courses-og-img.png"
 
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
 
 const useStyles = makeStyles(theme => ({
-  mainContent: {
-    paddingBottom: theme.spacing(2),
+  jumbotron: {
+    padding: theme.spacing(2),
+  },
+  courseContainer: {
+    padding: theme.spacing(2),
+  },
+  courseImg: {
+    borderRadius: 5,
+    width: "100%",
+    height: "auto",
+    maxWidth: "320px",
   },
   img: {
     maxWidth: "300px",
@@ -38,15 +44,6 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const tddReactDescriptionList = [
-  "Comprende los principios de Test Driven Development (TDD).",
-  "Aprende a aplicar fuertemente buenas prácticas - Código limpio y refactors en React JS.",
-  "Unit tests e integration testing.",
-  "TDD en formularios con validaciones y llamada a API.",
-  "TDD en un listado de elementos con filtros y paginación.",
-  "TDD en una app que maneje autenticación y autorización.",
-]
-
 const CoursesPremium = ({ data, location }) => {
   const {
     siteUrl,
@@ -56,30 +53,19 @@ const CoursesPremium = ({ data, location }) => {
   const theme = useTheme()
   const isUpSmallScreen = useMediaQuery(theme.breakpoints.up("sm"))
 
-  const renderItemDescriptions = descriptionList =>
-    descriptionList.map(description => (
-      <Typography variant="body2" component="p" key={description}>
-        <span role="img" aria-label="check">
-          ✅
-        </span>{" "}
-        {description}
-      </Typography>
-    ))
-
   return (
     <>
       <SEO
         title="Cursos Premium de Developero"
         description="Mejora tus habilidades de desarrollo de software con los cursos profesionales de Developero. React, Node, Javascript y más."
         url={`${siteUrl}/courses-premium`}
-        img={coverImg}
+        img={ogImg}
       />
       <Layout location={location}>
         <Box my={4}>
-          <Grid container>
+          <Paper elevation={1} className={classes.jumbotron}>
             <Grid
               container
-              className={classes.mainContent}
               direction={isUpSmallScreen ? "row" : "column-reverse"}
               alignItems="center"
             >
@@ -114,38 +100,52 @@ const CoursesPremium = ({ data, location }) => {
                 </Box>
               </Grid>
             </Grid>
-          </Grid>
+          </Paper>
         </Box>
 
         <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
-            <Card>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Test Driven Development (TDD) en React JS"
-                  image={tddReactImg}
-                  title="Test Driven Development (TDD) en React JS"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+          <Grid item xs={12}>
+            <Paper className={classes.courseContainer}>
+              <Grid container spacing={3}>
+                <Grid item xs={12} md={4}>
+                  <a href={tddReact} target="_blank" rel="noreferrer">
+                    <img
+                      className={classes.courseImg}
+                      src={tddReactImg}
+                      alt="Test Driven Development (TDD) en React JS"
+                      sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                    />
+                  </a>
+                </Grid>
+                <Grid item xs={12} md={8}>
+                  <Typography
+                    color="primary"
+                    variant="h6"
+                    component="h2"
+                    gutterBottom
+                  >
                     Test Driven Development (TDD) en React JS
                   </Typography>
-                  {renderItemDescriptions(tddReactDescriptionList)}
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  href={tddReact}
-                  target="_blank"
-                  fullWidth
-                >
-                  Ver Ahora
-                </Button>
-              </CardActions>
-            </Card>
+                  <Typography variant="subtitle1" component="h3" gutterBottom>
+                    Mejora tus habilidades en React usando TDD - Jest, React
+                    Testing Library, MSW, React Router, Hooks y más!
+                  </Typography>
+                  <Typography color="primary" gutterBottom>
+                    Cupón de máximo descuento activado
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    href={tddReact}
+                    target="_blank"
+                    endIcon={<PlayCircleOutlineIcon />}
+                    fullWidth={!isUpSmallScreen}
+                  >
+                    Ver Ahora
+                  </Button>
+                </Grid>
+              </Grid>
+            </Paper>
           </Grid>
         </Grid>
       </Layout>
