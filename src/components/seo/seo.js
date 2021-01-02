@@ -72,11 +72,11 @@ const SEO = ({
         },
         {
           property: `og:image:width`,
-          content: `2500`,
+          content: `1200`,
         },
         {
           property: `og:image:height`,
-          content: `2500`,
+          content: `1200`,
         },
         {
           property: `og:locale`,
