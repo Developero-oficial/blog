@@ -24,6 +24,11 @@ module.exports = {
       tddReact:
         "https://www.udemy.com/course/tdd-react-js/?couponCode=WEB-DEVELOPERO",
     },
+    ebooks: {
+      hooksManual: "https://amzn.to/3o8zEM2",
+      reactPatterns: "https://amzn.to/3n4fHEL",
+      introJsTesting: "https://amzn.to/2Ldl6fK",
+    },
   },
   plugins: [
     `gatsby-plugin-material-ui`,

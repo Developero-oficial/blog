@@ -71,6 +71,14 @@ const SEO = ({
           content: img,
         },
         {
+          property: `og:image:width`,
+          content: `2500`,
+        },
+        {
+          property: `og:image:height`,
+          content: `2500`,
+        },
+        {
           property: `og:locale`,
           content: `es_MX`,
         },
