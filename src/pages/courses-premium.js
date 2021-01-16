@@ -11,6 +11,7 @@ import Paper from "@material-ui/core/Paper"
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline"
 
 import tddReactImg from "../../static/tdd-react.svg"
+import reactPatternsImg from "../../static/react-patterns.jpg"
 import logo from "../../static/Logotipo_original.png"
 import ogImg from "../../content/assets/courses-og-img.png"
 
@@ -47,7 +48,7 @@ const useStyles = makeStyles(theme => ({
 const CoursesPremium = ({ data, location }) => {
   const {
     siteUrl,
-    premiumCourses: { tddReact },
+    premiumCourses: { tddReact, reactPatterns },
   } = data.site.siteMetadata
   const classes = useStyles()
   const theme = useTheme()
@@ -147,6 +148,52 @@ const CoursesPremium = ({ data, location }) => {
               </Grid>
             </Paper>
           </Grid>
+          <Grid item xs={12}>
+            <Paper className={classes.courseContainer}>
+              <Grid container spacing={3}>
+                <Grid item xs={12} md={4}>
+                  <a href={reactPatterns} target="_blank" rel="noreferrer">
+                    <img
+                      className={classes.courseImg}
+                      src={reactPatternsImg}
+                      alt="Guía definitiva: Aprende los 9 Patrones Avanzados en ReactJS"
+                      sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                    />
+                  </a>
+                </Grid>
+                <Grid item xs={12} md={8}>
+                  <Typography
+                    color="primary"
+                    variant="h6"
+                    component="h2"
+                    gutterBottom
+                  >
+                    Guía definitiva: Aprende los 9 Patrones Avanzados en ReactJS
+                  </Typography>
+                  <Typography variant="subtitle1" component="h3" gutterBottom>
+                    ¿Quieres pasar al siguiente nivel en React JS?
+                  </Typography>
+                  <Typography gutterBottom>
+                    Aprende a crear componentes en React JS realmente
+                    reutilizables, escalables y fáciles de mantener.
+                  </Typography>
+                  <Typography color="primary" gutterBottom>
+                    Cupón de máximo descuento activado
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    href={reactPatterns}
+                    target="_blank"
+                    endIcon={<PlayCircleOutlineIcon />}
+                    fullWidth={!isUpSmallScreen}
+                  >
+                    Ver Ahora
+                  </Button>
+                </Grid>
+              </Grid>
+            </Paper>
+          </Grid>
         </Grid>
       </Layout>
     </>
@@ -162,6 +209,7 @@ export const pageQuery = graphql`
         siteUrl
         premiumCourses {
           tddReact
+          reactPatterns
         }
       }
     }
