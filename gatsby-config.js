@@ -8,7 +8,7 @@ module.exports = {
     description: `Ebooks, Cursos, Tutoriales, Videos y más sobre ✅ DESARROLLO  DE SOFTWARE Y APPS DEL MUNDO REAL en Developero`,
     siteUrl: `https://developero.io`,
     social: {
-      youtube: `https://www.youtube.com/c/developero`,
+      youtube: `https://www.youtube.com/c/developero?sub_confirmation=1`,
       facebook: "https://www.facebook.com/DeveloperoOficial/",
       github: "https://github.com/Developero-oficial",
     },
@@ -22,9 +22,9 @@ module.exports = {
     },
     premiumCourses: {
       tddReact:
-        "https://www.udemy.com/course/tdd-react-js/?couponCode=WEB-DEVELOPERO",
+        "https://www.udemy.com/course/tdd-react-js/?couponCode=WEB-DEVELOPERO-2",
       reactPatterns:
-        "https://www.udemy.com/course/react-js-patrones/?couponCode=WEB-DEVELOPERO",
+        "https://www.udemy.com/course/react-js-patrones/?couponCode=WEB-DEVELOPERO-2",
     },
     ebooks: {
       hooksManual: "https://amzn.to/3o8zEM2",
