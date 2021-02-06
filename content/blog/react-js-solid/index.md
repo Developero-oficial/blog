@@ -6,17 +6,13 @@ En este post vas a comprender cómo aplicar los principios SOLID en React JS pas
 coverImage: "react-solid.jpg"
 ---
 
-En este post vas a comprender cómo aplicar los principios SOLID en React JS paso a paso, desde el nivel conceptual hasta aplicarlo en código.
+Si bien los principios SOLID son el resultado del trabajo de diferentes autores, fueron llamados de ese modo por Robert C. Martin, conocido como el tío Bob y autor de diversos libros como Clean Code y Clean Architecture (de
+lectura recomendada, te dejo links los libros al final del post).
 
-Estos principios y llamados de ese modo por Robert C. Martin,
-conocido como el tío Bob y autor de diversos libros como clean code y clean architecture (de
-lectura recomendada, por cierto).
+Si sigues estos principios, puedes crear un código más fácil de mantener y de leer
+independientemente de la tecnología que estés usando.
 
-**Conocerlos fue un parte aguas de un antes y después en mi carrera como
-desarrollador de software.**
-
-Si seguimos estos principios, podemos crear un código más fácil de mantener y de leer
-independientemente de la tecnología que estemos usando.
+**Conocerlos fue un parte aguas de un antes y después en mi carrera como desarrollador de software.**
 
 Son cinco principios:
 
@@ -26,7 +22,7 @@ Son cinco principios:
 - **I**nterface Segregation Principle.
 - **D**ependency Inversion Principle.
 
-Que si leemos las siglas de cada uno, se forma la palabra **SOLID**.
+Que si leemos las siglas de cada uno, se forman la palabra **SOLID**.
 
 Si bien estos principios han sido asociados y ejemplificados bajo el paradigma de la
 programación orientada a objetos (OOP por sus siglas en inglés), no significa que estén
@@ -34,7 +30,7 @@ casados con este paradigma.
 
 ## Cómo aplicar SOLID en React JS
 
-Para aplicar los principios SOlID en React, necesitamos aprovechar las características que hacen único a esta biblioteca de UI como veremos a continiación.
+Para aplicar los principios SOlID en React, necesitamos aprovechar las características que hacen único a esta biblioteca de UI como veremos a continuación.
 
 ## Single Responsibility Principle
 
@@ -702,3 +698,10 @@ concreto.
 <p style="font-size:20px;">Si quieres conocer más sobre cómo aplicar estos principios en React, entra al curso
 <a style="text-decoration: none;color:rgb(254, 243, 90);" target="_blank" rel="noopener noreferrer" href="https://www.udemy.com/course/react-js-patrones/?referralCode=FF3F91AFC79C5837D13E">Patrones Avanzados en React JS</a></p>
 </div>
+
+Otras fuentes recomendadas:
+
+- <a target="_blank" rel="noopener noreferrer" href="https://amzn.to/3joC3Rj">Clean Code</a>
+- <a target="_blank" rel="noopener noreferrer" href="https://amzn.to/2LrYclh">Clean Architecture</a>
+
+Si compras un libro a través de estos enlaces, ganaré una pequeña comisión que me ayudará a seguir creando y compartiendo posts como este :)
