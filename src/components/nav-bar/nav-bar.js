@@ -57,14 +57,13 @@ const navBarLinks = [
     label: "Blog",
   },
   {
+    path: "/ebooks",
+    label: "Ebooks",
+  },
+  {
     path: "/courses-premium",
     label: "Cursos premium",
     highlightPrimary: true,
-  },
-  {
-    path: "/ebooks",
-    label: "Ebooks",
-    highlightSecondary: true,
   },
 ]
 
@@ -86,7 +85,6 @@ const NavBar = ({ location, width }) => {
         location.pathname === path && classes.toolbarLinkSelected
       }
       ${highlightPrimary && classes.highlightPrimary}
-      ${highlightSecondary && classes.highlightSecondary}
       `
       return (
         <Grid item key={label}>

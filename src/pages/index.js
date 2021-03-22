@@ -87,7 +87,6 @@ const BlogIndex = ({ data, location }) => {
                 </Button>
                 <Button
                   variant="contained"
-                  color="secondary"
                   component={GatsbyLink}
                   to="/ebooks"
                   fullWidth={isMobile}
