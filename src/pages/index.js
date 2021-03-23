@@ -30,6 +30,13 @@ const useStyles = makeStyles(theme => ({
   marginTop: {
     marginTop: theme.spacing(2),
   },
+  link: {
+    textDecoration: "none",
+  },
+  postsContainer: {
+    backgroundColor: "#ffffff",
+    borderRadius: 5,
+  },
 }))
 
 const learn = [
@@ -46,6 +53,7 @@ const learn = [
 
 const BlogIndex = ({ data, location }) => {
   const { siteUrl, description } = data.site.siteMetadata
+  const { edges: lastPosts } = data.allMarkdownRemark
   const classes = useStyles()
   const isMobile = useMediaQuery("(max-width:600px)")
 
@@ -141,6 +149,43 @@ const BlogIndex = ({ data, location }) => {
             </Grid>
           ))}
         </Grid>
+
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <Box mt={2}>
+              <Typography
+                gutterBottom
+                variant="h4"
+                component="h2"
+                align="center"
+                color="primary"
+              >
+                Últimos posts
+              </Typography>
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} className={classes.postsContainer}>
+            {lastPosts.map(
+              ({
+                node: {
+                  fields: { slug },
+                  frontmatter: { title, description: postDescription },
+                },
+              }) => (
+                <Box my={4}>
+                  <Typography variant="h5" component="h3" gutterBottom>
+                    {title}
+                  </Typography>
+                  <Typography>{postDescription}</Typography>
+                  <GatsbyLink to={slug} className={classes.link}>
+                    <Typography color="primary">Leer más...</Typography>
+                  </GatsbyLink>
+                </Box>
+              )
+            )}
+          </Grid>
+        </Grid>
       </Layout>
     </>
   )
@@ -157,7 +202,10 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      limit: 3
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt
