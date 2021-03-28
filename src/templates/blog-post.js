@@ -141,9 +141,7 @@ export const pageQuery = graphql`
         coverImage {
           publicURL
           childImageSharp {
-            sizes(maxWidth: 2000) {
-              ...GatsbyImageSharpSizes
-            }
+            gatsbyImageData(layout: FIXED)
           }
         }
       }

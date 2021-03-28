@@ -3,7 +3,7 @@ import { PageProps, graphql } from "gatsby"
 
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
-import { BlogContainer } from '../components/blog-container'
+import { BlogContainer } from "../components/blog-container"
 
 type Data = {
   site: {
@@ -41,10 +41,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
 
   return (
     <>
-      <SEO
-        title="Blog - Developero"
-        url={`${siteUrl}/blog`}
-      />
+      <SEO title="Blog - Developero" url={`${siteUrl}/blog`} />
       <Layout location={location}>
         <BlogContainer posts={posts} />
       </Layout>
@@ -77,9 +74,7 @@ export const pageQuery = graphql`
             coverImage {
               publicURL
               childImageSharp {
-                sizes(maxWidth: 2000) {
-                  ...GatsbyImageSharpSizes
-                }
+                gatsbyImageData(layout: FIXED)
               }
             }
           }
