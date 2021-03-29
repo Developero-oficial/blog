@@ -72,8 +72,8 @@ const navBarLinks = [
     label: "Cursos Gratis",
     items: [
       {
-        path: "/php-mvc-tutorial-desde-cero",
-        label: "Php MVC desde cero",
+        path: "/mern-stack-tutorial-español",
+        label: "MERN Stack desde cero",
       },
     ],
   },
@@ -125,7 +125,9 @@ const NavBar = ({ location, width }) => {
           onMouseOver={() => setShowSubmenu(true)}
           onMouseLeave={() => setShowSubmenu(false)}
         >
-          <a className={`${classes.toolbarLink} ${classes.menu}`}>{label}</a>
+          <a href="" className={`${classes.toolbarLink} ${classes.menu}`}>
+            {label}
+          </a>
           <Box
             className={showSubmenu ? "" : classes.hide}
             position="absolute"
