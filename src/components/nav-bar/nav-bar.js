@@ -12,6 +12,7 @@ import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
 import ListItem from "@material-ui/core/ListItem"
 import List from "@material-ui/core/List"
+import Box from "@material-ui/core/Box"
 import PropTypes from "prop-types"
 
 const useStyles = makeStyles(theme => ({
@@ -33,6 +34,12 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: "rgba(0, 0, 0, 0.1)",
       textDecoration: "none",
     },
+  },
+  hide: {
+    display: "none",
+  },
+  menu: {
+    color: "#1717ff",
   },
   toolbarLinkSelected: {
     backgroundColor: "rgba(0, 0, 0, 0.1)",
@@ -61,6 +68,16 @@ const navBarLinks = [
     label: "Ebooks",
   },
   {
+    path: null,
+    label: "Cursos Gratis",
+    items: [
+      {
+        path: "/mern-stack-tutorial-español",
+        label: "MERN Stack desde cero",
+      },
+    ],
+  },
+  {
     path: "/courses-premium",
     label: "Cursos premium",
     highlightPrimary: true,
@@ -70,6 +87,7 @@ const navBarLinks = [
 const NavBar = ({ location, width }) => {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
+  const [showSubmenu, setShowSubmenu] = useState(false)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -79,18 +97,45 @@ const NavBar = ({ location, width }) => {
     setOpen(false)
   }
 
+  const renderLink = ({ label, path, highlightPrimary }) => {
+    const className = `${classes.toolbarLink} ${
+      location.pathname === path && classes.toolbarLinkSelected
+    }
+    ${highlightPrimary && classes.highlightPrimary}
+    `
+    return (
+      <Grid item key={label}>
+        <Link component={GatsbyLink} to={path} className={className}>
+          {label}
+        </Link>
+      </Grid>
+    )
+  }
+
   const renderLinks = () =>
-    navBarLinks.map(({ path, label, highlightPrimary, highlightSecondary }) => {
-      const className = `${classes.toolbarLink} ${
-        location.pathname === path && classes.toolbarLinkSelected
+    navBarLinks.map(({ path, label, highlightPrimary, items }) => {
+      if (!items) {
+        return renderLink({ path, label, highlightPrimary })
       }
-      ${highlightPrimary && classes.highlightPrimary}
-      `
+
       return (
-        <Grid item key={label}>
-          <Link component={GatsbyLink} to={path} className={className}>
+        <Grid
+          item
+          key={label}
+          onMouseOver={() => setShowSubmenu(true)}
+          onMouseLeave={() => setShowSubmenu(false)}
+        >
+          <a href="" className={`${classes.toolbarLink} ${classes.menu}`}>
             {label}
-          </Link>
+          </a>
+          <Box
+            className={showSubmenu ? "" : classes.hide}
+            position="absolute"
+            top={40}
+            pt={3}
+          >
+            {items.map(subItem => renderLink(subItem))}
+          </Box>
         </Grid>
       )
     })
