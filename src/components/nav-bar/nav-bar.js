@@ -12,9 +12,9 @@ import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
 import ListItem from "@material-ui/core/ListItem"
 import List from "@material-ui/core/List"
-import Menu from "@material-ui/core/Menu"
-import MenuItem from "@material-ui/core/MenuItem"
 import PropTypes from "prop-types"
+
+import { TopNavBarLinks } from "../top-nav-bar-links"
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -25,34 +25,6 @@ const useStyles = makeStyles(theme => ({
     "&:hover": {
       textDecoration: "none",
     },
-  },
-  toolbarLink: {
-    padding: theme.spacing(1),
-    flexShrink: 0,
-    borderRadius: 5,
-    transition: "0.3s",
-    "&:hover": {
-      backgroundColor: "rgba(0, 0, 0, 0.1)",
-      textDecoration: "none",
-    },
-  },
-  hide: {
-    display: "none",
-  },
-  menu: {
-    color: "#1717ff",
-    textDecoration: "none",
-  },
-  toolbarLinkSelected: {
-    backgroundColor: "rgba(0, 0, 0, 0.1)",
-  },
-  highlightPrimary: {
-    backgroundColor: theme.palette.primary.main,
-    color: "#ffffff",
-  },
-  highlightSecondary: {
-    backgroundColor: theme.palette.secondary.main,
-    color: "#555555",
   },
 }))
 
@@ -89,7 +61,6 @@ const navBarLinks = [
 const NavBar = ({ location, width }) => {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
-  const [anchorEl, setAnchorEl] = useState(null)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -98,69 +69,6 @@ const NavBar = ({ location, width }) => {
   const handleDrawerClose = () => {
     setOpen(false)
   }
-
-  const handleMenuClick = event => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleMenuClose = () => {
-    setAnchorEl(null)
-  }
-
-  const renderLink = ({ label, path, highlightPrimary }) => {
-    const className = `${classes.toolbarLink} ${
-      location.pathname === path && classes.toolbarLinkSelected
-    }
-    ${highlightPrimary && classes.highlightPrimary}
-    `
-    return (
-      <Grid item key={label}>
-        <Link component={GatsbyLink} to={path} className={className}>
-          {label}
-        </Link>
-      </Grid>
-    )
-  }
-
-  const renderLinks = () =>
-    navBarLinks.map(({ path, label, highlightPrimary, items }) => {
-      if (!items) {
-        return renderLink({ path, label, highlightPrimary })
-      }
-
-      return (
-        <Grid item key={label}>
-          <a
-            href=""
-            aria-controls="simple-menu"
-            onClick={handleMenuClick}
-            onMouseOver={handleMenuClick}
-            onFocus={handleMenuClick}
-            className={`${classes.toolbarLink} ${classes.menu}`}
-          >
-            {label}
-          </a>
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            getContentAnchorEl={null}
-            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-            transformOrigin={{ vertical: "top", horizontal: "center" }}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
-          >
-            {items.map(subItem => (
-              <MenuItem onClick={handleMenuClose} key={subItem.label}>
-                <Link component={GatsbyLink} to={subItem.path}>
-                  {subItem.label}
-                </Link>
-              </MenuItem>
-            ))}
-          </Menu>
-        </Grid>
-      )
-    })
 
   const renderDrawIcon = () => (
     <IconButton
@@ -191,7 +99,11 @@ const NavBar = ({ location, width }) => {
           </Grid>
           <Grid item>
             <Grid container spacing={1}>
-              {width === "xs" ? renderDrawIcon() : renderLinks()}
+              {width === "xs" ? (
+                renderDrawIcon()
+              ) : (
+                <TopNavBarLinks navBarLinks={navBarLinks} location={location} />
+              )}
             </Grid>
           </Grid>
 
