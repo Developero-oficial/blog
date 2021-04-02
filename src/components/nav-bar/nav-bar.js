@@ -143,13 +143,18 @@ const NavBar = ({ location, width }) => {
           <Menu
             id="simple-menu"
             anchorEl={anchorEl}
+            getContentAnchorEl={null}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+            transformOrigin={{ vertical: "top", horizontal: "center" }}
             keepMounted
             open={Boolean(anchorEl)}
             onClose={handleMenuClose}
           >
             {items.map(subItem => (
               <MenuItem onClick={handleMenuClose} key={subItem.label}>
-                <Link>{subItem.label}</Link>
+                <Link component={GatsbyLink} to={subItem.path}>
+                  {subItem.label}
+                </Link>
               </MenuItem>
             ))}
           </Menu>
