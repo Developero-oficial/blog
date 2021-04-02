@@ -173,7 +173,7 @@ const BlogIndex = ({ data, location }) => {
                   frontmatter: { title, description: postDescription },
                 },
               }) => (
-                <Box my={4}>
+                <Box key={title} my={4}>
                   <Typography variant="h5" component="h3" gutterBottom>
                     {title}
                   </Typography>
