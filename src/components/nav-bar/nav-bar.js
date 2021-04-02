@@ -12,7 +12,8 @@ import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
 import ListItem from "@material-ui/core/ListItem"
 import List from "@material-ui/core/List"
-import Box from "@material-ui/core/Box"
+import Menu from "@material-ui/core/Menu"
+import MenuItem from "@material-ui/core/MenuItem"
 import PropTypes from "prop-types"
 
 const useStyles = makeStyles(theme => ({
@@ -40,6 +41,7 @@ const useStyles = makeStyles(theme => ({
   },
   menu: {
     color: "#1717ff",
+    textDecoration: "none",
   },
   toolbarLinkSelected: {
     backgroundColor: "rgba(0, 0, 0, 0.1)",
@@ -87,7 +89,7 @@ const navBarLinks = [
 const NavBar = ({ location, width }) => {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
-  const [showSubmenu, setShowSubmenu] = useState(false)
+  const [anchorEl, setAnchorEl] = useState(null)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -95,6 +97,14 @@ const NavBar = ({ location, width }) => {
 
   const handleDrawerClose = () => {
     setOpen(false)
+  }
+
+  const handleMenuClick = event => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleMenuClose = () => {
+    setAnchorEl(null)
   }
 
   const renderLink = ({ label, path, highlightPrimary }) => {
@@ -119,23 +129,30 @@ const NavBar = ({ location, width }) => {
       }
 
       return (
-        <Grid
-          item
-          key={label}
-          onMouseOver={() => setShowSubmenu(true)}
-          onMouseLeave={() => setShowSubmenu(false)}
-        >
-          <a href="" className={`${classes.toolbarLink} ${classes.menu}`}>
+        <Grid item key={label}>
+          <a
+            href=""
+            aria-controls="simple-menu"
+            onClick={handleMenuClick}
+            onMouseOver={handleMenuClick}
+            onFocus={handleMenuClick}
+            className={`${classes.toolbarLink} ${classes.menu}`}
+          >
             {label}
           </a>
-          <Box
-            className={showSubmenu ? "" : classes.hide}
-            position="absolute"
-            top={40}
-            pt={3}
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
           >
-            {items.map(subItem => renderLink(subItem))}
-          </Box>
+            {items.map(subItem => (
+              <MenuItem onClick={handleMenuClose} key={subItem.label}>
+                <Link>{subItem.label}</Link>
+              </MenuItem>
+            ))}
+          </Menu>
         </Grid>
       )
     })
