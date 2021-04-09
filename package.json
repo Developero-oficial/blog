@@ -39,10 +39,14 @@
     "react-share": "4.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
     "@testing-library/react": "10.0.4",
     "babel-preset-gatsby": "0.4.7",
     "eslint-webpack-plugin": "^2.5.3",
     "identity-obj-proxy": "3.0.0",
+    "install": "^0.13.0",
+    "npm": "^7.9.0",
     "prettier": "2.0.5",
     "prop-types": "15.7.2",
     "react-test-renderer": "16.13.1"
