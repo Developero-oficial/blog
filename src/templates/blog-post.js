@@ -57,7 +57,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </header>
             </Grid>
 
-            <Grid item xs={10}>
+            <Grid item xs={12}>
               <img
                 src={post.frontmatter.coverImage.publicURL}
                 alt="react js tutorial en espanol 2020"
