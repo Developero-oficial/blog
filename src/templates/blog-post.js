@@ -4,10 +4,13 @@ import Typography from "@material-ui/core/Typography"
 import Divider from "@material-ui/core/Divider"
 import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
 
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
 import { SocialShare } from "../components/social-share"
+
+deckDeckGoHighlightElement()
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark

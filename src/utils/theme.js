@@ -6,6 +6,11 @@ export const secondaryColor = "#00ed65"
 export const textColor = "#2d2d2d"
 
 export const theme = createMuiTheme({
+  typography: {
+    body1: {
+      fontSize: 18,
+    },
+  },
   palette: {
     primary: {
       main: "#1717ff",
