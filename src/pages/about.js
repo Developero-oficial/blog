@@ -16,7 +16,7 @@ const AboutPage = ({ data, location }) => {
       <SEO title="Acerca de" />
       <Layout location={location}>
         <Grid container justify="center" spacing={5} style={{ marginTop: 16 }}>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12}>
             <Typography variant="h4" component="h1" gutterBottom>
               Acerca de Developero
             </Typography>
@@ -73,7 +73,7 @@ const AboutPage = ({ data, location }) => {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12}>
             <Typography variant="h4" component="h2" gutterBottom>
               Aprender a programar gratis
             </Typography>
@@ -103,7 +103,7 @@ const AboutPage = ({ data, location }) => {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12}>
             <img
               src={screenshotFan}
               alt="Captura de pantalla fan"
@@ -128,7 +128,7 @@ const AboutPage = ({ data, location }) => {
             </figcaption>
           </Grid>
 
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12}>
             <Typography paragraph>
               Este blog es una extensión más para poder llegar y ayudar a más
               personas en el mundo de la programación.

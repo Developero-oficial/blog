@@ -90,11 +90,19 @@ module.exports = {
             options: {
               classMap: {
                 "heading[depth=1]":
-                  "MuiBox-root MuiBox-root-2 MuiTypography-h4 MuiTypography-colorTextPrimary",
+                  "MuiBox-root MuiBox-root-2 MuiTypography-h3 MuiTypography-colorTextPrimary",
                 "heading[depth=2]":
-                  "MuiBox-root MuiBox-root-2 MuiTypography-h5 MuiTypography-colorTextPrimary",
-                paragraph: "MuiTypography-body1 MuiTypography-gutterBottom",
+                  "MuiBox-root MuiBox-root-2 MuiTypography-h4 MuiTypography-colorTextPrimary",
+                paragraph:
+                  "MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom MuiTypography-paragraph",
               },
+            },
+          },
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: "carbon",
+              theme: "blackboard",
             },
           },
           `gatsby-remark-prismjs`,
