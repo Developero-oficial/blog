@@ -9,6 +9,7 @@ import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import CheckIcon from "@material-ui/icons/Check"
+import "charter-webfont"
 
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
