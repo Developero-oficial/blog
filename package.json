@@ -12,6 +12,7 @@
     "@material-ui/core": "4.10.2",
     "@material-ui/icons": "4.9.1",
     "@material-ui/styles": "4.10.0",
+    "charter-webfont": "^3.0.2",
     "gatsby": "^2.32.11",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-feed": "^2.13.1",
