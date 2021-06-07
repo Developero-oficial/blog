@@ -22,9 +22,9 @@ module.exports = {
     },
     premiumCourses: {
       tddReact:
-        "https://www.udemy.com/course/tdd-react-js/?couponCode=WEB-DEVELOPERO-5",
+        "https://www.udemy.com/course/tdd-react-js/?couponCode=WEB-DEVELOPERO-6",
       reactPatterns:
-        "https://www.udemy.com/course/react-js-patrones/?couponCode=WEB-DEVELOPERO-5",
+        "https://www.udemy.com/course/react-js-patrones/?couponCode=WEB-DEVELOPERO-6",
     },
     ebooks: {
       hooksManual: "https://amzn.to/3o8zEM2",
