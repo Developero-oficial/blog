@@ -59,7 +59,7 @@ export const Footer = () => {
   const { tddreactjs } = data.site.siteMetadata.friends
 
   return (
-    <div className={classes.container}>
+    <footer className={classes.container}>
       <Container maxWidth="md">
         <Grid container className={classes.footer} spacing={4}>
           <Grid item xs={12} md={4} className={classes.newsLetetterContainer}>
@@ -73,6 +73,7 @@ export const Footer = () => {
                 color="inherit"
                 href={youtube}
                 className={classes.link}
+                aria-label="Abrir canal de YouTube de Developero en nueva pestaña"
               >
                 <YouTubeIcon fontSize="large" />
               </Link>
@@ -83,6 +84,7 @@ export const Footer = () => {
                 color="inherit"
                 href={github}
                 className={classes.link}
+                aria-label="Abrir cuenta de Github de Developero en nueva pestaña"
               >
                 <GitHubIcon fontSize="large" />
               </Link>
@@ -93,6 +95,7 @@ export const Footer = () => {
                 color="inherit"
                 href={facebook}
                 className={classes.link}
+                aria-label="Abrir fanpage de Developero en nueva pestaña"
               >
                 <FacebookIcon fontSize="large" />
               </Link>
@@ -121,6 +124,6 @@ export const Footer = () => {
           </Grid>
         </Grid>
       </Container>
-    </div>
+    </footer>
   )
 }
