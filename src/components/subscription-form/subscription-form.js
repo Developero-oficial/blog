@@ -12,6 +12,12 @@ const useStyle = makeStyles(() => ({
   title: {
     color: "#000",
   },
+  root: {
+    background: "white",
+  },
+  input: {
+    color: "black",
+  },
 }))
 
 export const SubscriptionForm = ({
@@ -53,7 +59,12 @@ export const SubscriptionForm = ({
         target="_blank"
       >
         <Grid container spacing={3}>
-          <input name="utf8" type="hidden" value="&#x2713;" />
+          <input
+            name="utf8"
+            type="hidden"
+            value="&#x2713;"
+            aria-hidden="true"
+          />
 
           <Grid item xs={12}>
             <TextField
@@ -62,7 +73,12 @@ export const SubscriptionForm = ({
               type="email"
               name="subscriber[email]"
               id="subscriber_email"
-              variant="filled"
+              variant="outlined"
+              color="primary"
+              className={classes.root}
+              InputProps={{
+                className: classes.input,
+              }}
             />
           </Grid>
 
@@ -73,7 +89,12 @@ export const SubscriptionForm = ({
               type="text"
               name="subscriber[name]"
               id="subscriber_name"
-              variant="filled"
+              variant="outlined"
+              color="primary"
+              className={classes.root}
+              InputProps={{
+                className: classes.input,
+              }}
             />
           </Grid>
 
@@ -84,6 +105,7 @@ export const SubscriptionForm = ({
             style={{ position: "absolute", left: "-5000px" }}
             tabIndex="-1"
             autoComplete="off"
+            aria-hidden="true"
           />
 
           <Grid item xs={12}>

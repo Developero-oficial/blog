@@ -44,13 +44,18 @@
   "devDependencies": {
     "@babel/core": "^7.13.15",
     "@babel/preset-env": "^7.13.15",
+    "@testing-library/cypress": "^7.0.6",
     "@testing-library/react": "10.0.4",
+    "axe-core": "^4.2.2",
     "babel-preset-gatsby": "0.4.7",
+    "cypress": "^7.5.0",
+    "cypress-axe": "^0.12.2",
     "eslint-webpack-plugin": "^2.5.3",
     "identity-obj-proxy": "3.0.0",
     "prettier": "2.0.5",
     "prop-types": "15.7.2",
-    "react-test-renderer": "16.13.1"
+    "react-test-renderer": "16.13.1",
+    "start-server-and-test": "^1.12.5"
   },
   "homepage": "https://github.com/Developero-oficial/blog",
   "keywords": [
@@ -69,6 +74,10 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run"
   }
 }
