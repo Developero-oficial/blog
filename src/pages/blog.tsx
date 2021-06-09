@@ -1,5 +1,7 @@
 import React from "react"
 import { PageProps, graphql } from "gatsby"
+import Typography from "@material-ui/core/Typography"
+import Box from "@material-ui/core/Box"
 
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
@@ -43,6 +45,11 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
     <>
       <SEO title="Blog - Developero" url={`${siteUrl}/blog`} />
       <Layout location={location}>
+        <Box my={4}>
+          <Typography variant="h5" component="h1" gutterBottom>
+            Blog de Developero
+          </Typography>
+        </Box>
         <BlogContainer posts={posts} />
       </Layout>
     </>
