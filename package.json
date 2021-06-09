@@ -50,12 +50,17 @@
     "babel-preset-gatsby": "0.4.7",
     "cypress": "^7.5.0",
     "cypress-axe": "^0.12.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-cypress": "^2.11.3",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-webpack-plugin": "^2.5.3",
     "identity-obj-proxy": "3.0.0",
     "prettier": "2.0.5",
     "prop-types": "15.7.2",
     "react-test-renderer": "16.13.1",
-    "start-server-and-test": "^1.12.5"
+    "start-server-and-test": "^1.12.5",
+    "typescript": "^4.3.2"
   },
   "homepage": "https://github.com/Developero-oficial/blog",
   "keywords": [
@@ -78,6 +83,7 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run"
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
+    "lint": "eslint --ignore-path .gitignore ."
   }
 }

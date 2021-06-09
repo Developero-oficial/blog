@@ -1,14 +1,33 @@
 language: node_js
 node_js:
   - "14"
-cache: yarn
+addons:
+  apt:
+    packages:
+      - libgconf-2-4
+
+cache:
+  # cache both npm modules and Cypress binary
+  directories:
+    - ~/.npm
+    - ~/.cache
+  # install dependencies and check that Cypress can run
+  override:
+    - npm ci
+    - npm run cy:verify
+
 branches:
   only:
     - master
+
 before_script:
   - "yarn global add firebase-tools"
   - "yarn global add gatsby"
+
 script:
+  - npm run lint
+  - npm run test:e2e:ci
   - "yarn build"
+
 after_success:
   - "firebase deploy --token=${FIREBASE_API_TOKEN}"
