@@ -5,10 +5,6 @@ import { makeStyles } from "@material-ui/core/styles"
 import { BlogListItem } from "../blog-list-item"
 
 const useStyles = makeStyles(theme => ({
-  mainContent: {
-    padding: `${theme.spacing(8)}px 0px`,
-    borderBottom: `2px solid ${theme.palette.secondary.main}`,
-  },
   postsContainer: {
     marginTop: theme.spacing(4),
   },

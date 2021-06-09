@@ -33,7 +33,9 @@ export const BlogListItem = ({ node }) => {
               </Typography>
             </Link>
           }
-          subheader={<small>{node.frontmatter.date}</small>}
+          subheader={
+            <Typography variant="body2">{node.frontmatter.date}</Typography>
+          }
         />
         <Link to={node.fields.slug}>
           <CardMedia

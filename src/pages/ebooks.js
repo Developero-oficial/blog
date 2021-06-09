@@ -162,10 +162,10 @@ const Ebooks = ({ data, location }) => {
                     >
                       React Hooks Manual Desde Cero
                     </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
+                    <Typography variant="subtitle1" component="p" gutterBottom>
                       Conoce los por qué, cómo y en qué casos aplicar cada hook.
                     </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
+                    <Typography variant="subtitle1" component="p" gutterBottom>
                       Vamos a revisar en cada hook cuáles son los escenarios
                       donde conviene aplicarlos y cómo hacerlo con buenas
                       prácticas.
@@ -223,12 +223,12 @@ const Ebooks = ({ data, location }) => {
                     >
                       Patrones Avanzados En React JS
                     </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
+                    <Typography variant="subtitle1" component="p" gutterBottom>
                       En este libro aprenderás a cómo crear componentes en React
                       JS realmente reutilizables, escalables y fáciles de
                       mantener a lo largo del tiempo.
                     </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
+                    <Typography variant="subtitle1" component="p" gutterBottom>
                       Esto es posible implementando los patrones avanzados en
                       React JS así como los principios SOLID que los
                       fundamentan.
@@ -276,13 +276,13 @@ const Ebooks = ({ data, location }) => {
                     >
                       Introducción al Testing en Javascript
                     </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
+                    <Typography variant="subtitle1" component="p" gutterBottom>
                       En este libro vas a partir desde cero comprendiendo paso a
                       paso los conceptos relacionados con las pruebas
                       automatizadas con un enfoque orientado a la demostración
                       de ejemplos y la práctica.
                     </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
+                    <Typography variant="subtitle1" component="p" gutterBottom>
                       Vas a tener una visión general del ecosistema de testing
                       en Javascript y un acercamiento a cómo crear: Unit
                       testing, Integration testing y e2e testing.
