@@ -36,7 +36,7 @@ describe("main blog page", () => {
     )
   })
 
-  it.only("should navigate to courses premium page", () => {
+  it("should navigate to courses premium page", () => {
     cy.findByRole("link", { name: /cursos premium/i }).click()
     cy.findByRole("heading", { name: /cursos premium de developero/i }).should(
       "be.visible"

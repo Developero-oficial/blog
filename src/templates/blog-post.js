@@ -74,7 +74,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </Grid>
 
             <Grid item xs={12}>
-              <Typography variant="h6">Comparte el conocimiento</Typography>
+              <Typography variant="h6" component="p">
+                Comparte el conocimiento
+              </Typography>
               <SocialShare url={socialUrl} title={post.frontmatter.title} />
             </Grid>
 

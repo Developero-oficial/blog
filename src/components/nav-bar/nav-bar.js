@@ -82,7 +82,12 @@ const NavBar = ({ location, width }) => {
   )
 
   return (
-    <Toolbar component="nav" variant="dense" className={classes.toolbar}>
+    <Toolbar
+      component="nav"
+      variant="dense"
+      className={classes.toolbar}
+      aria-label="menú de navegación"
+    >
       <Container maxWidth="md">
         <Grid
           container

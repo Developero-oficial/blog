@@ -21,8 +21,13 @@ describe("Accessibility tests", () => {
     cy.checkA11y()
   })
 
-  it.only("Has no detectable accessibility violations on load on about page", () => {
+  it("Has no detectable accessibility violations on load on about page", () => {
     cy.visit("/about").get("main").injectAxe()
+    cy.checkA11y()
+  })
+
+  it("Has no detectable accessibility violations on load blog post page", () => {
+    cy.visit("/react-js-solid/").get("main").injectAxe()
     cy.checkA11y()
   })
 })
