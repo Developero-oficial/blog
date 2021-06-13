@@ -20,6 +20,13 @@ const tddTutorials = [
     description: "Usando Jest y Testing Library como herramientas de pruebas.",
     url: "https://tddreactjs.com/",
   },
+  {
+    title: "Curso premium de TDD con React JS",
+    description:
+      "Mejora tus habilidades en React usando TDD - Jest, React Testing Library, MSW, React Router, Hooks y más!",
+    url:
+      "https://www.udemy.com/course/tdd-react-js/?referralCode=F40803D2C4D2934AB038",
+  },
 ]
 
 const StyledTypography = withStyles({ body1: { marginBottom: "2rem" } })(
@@ -120,6 +127,16 @@ const TestDrivenDevelopment = ({ data, location }) => {
               Puedes ver un ejemplo de TDD en el siguiente vídeo de menos de 3
               minutos.
             </StyledTypography>
+
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/Cu9FzBtoEoo?controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
 
             <Grid container spacing={2}>
               <Grid item xs={12}>
