@@ -60,7 +60,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <Grid item xs={12}>
               <img
                 src={post.frontmatter.coverImage.publicURL}
-                alt="react js tutorial en espanol 2020"
+                alt={post.frontmatter.title}
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </Grid>
