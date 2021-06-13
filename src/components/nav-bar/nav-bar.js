@@ -30,12 +30,12 @@ const useStyles = makeStyles(theme => ({
 
 const navBarLinks = [
   {
-    path: "/about",
-    label: "Acerca De",
-  },
-  {
     path: "/blog",
     label: "Blog",
+  },
+  {
+    path: "/test-driven-development",
+    label: "TDD",
   },
   {
     path: "/ebooks",

@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Typography from "@material-ui/core/Typography"
 import Divider from "@material-ui/core/Divider"
 import Grid from "@material-ui/core/Grid"
-import Box from "@material-ui/core/Box"
+import Container from "@material-ui/core/Container"
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
 
 import { Layout } from "../components/layout"
@@ -33,7 +33,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={description}
         social={social}
       >
-        <Box my={6}>
+        <Container maxWidth="sm">
           <Grid container justify="center" spacing={4}>
             <Grid item xs={12}>
               <header>
@@ -60,7 +60,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <Grid item xs={12}>
               <img
                 src={post.frontmatter.coverImage.publicURL}
-                alt="react js tutorial en espanol 2020"
+                alt={post.frontmatter.title}
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </Grid>
@@ -113,7 +113,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </nav>
             </Grid>
           </Grid>
-        </Box>
+        </Container>
       </Layout>
     </>
   )

@@ -30,4 +30,9 @@ describe("Accessibility tests", () => {
     cy.visit("/react-js-solid/").get("main").injectAxe()
     cy.checkA11y()
   })
+
+  it("Has no detectable accessibility violations on load tdd page", () => {
+    cy.visit("/test-driven-development/").get("main").injectAxe()
+    cy.checkA11y()
+  })
 })
