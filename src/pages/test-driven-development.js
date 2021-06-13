@@ -6,9 +6,20 @@ import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
 import Typography from "@material-ui/core/Typography"
 import { withStyles } from "@material-ui/core/styles"
+import red from "@material-ui/core/colors/red"
+import green from "@material-ui/core/colors/green"
+import Link from "@material-ui/core/Link"
 
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
+
+const tddTutorials = [
+  {
+    title: "Tutorial de React JS y TDD desde cero",
+    description: "Usando Jest y Testing Library como herramientas de pruebas.",
+    url: "https://tddreactjs.com/",
+  },
+]
 
 const StyledTypography = withStyles({ body1: { marginBottom: "2rem" } })(
   Typography
@@ -40,6 +51,12 @@ const TestDrivenDevelopment = ({ data, location }) => {
             </StyledTypography>
 
             <StyledTypography>
+              Fue creado por Kent Beck como parte de la metodología de eXtreme
+              Programming (XP) con la promesa de tener varios beneficios como
+              veremos más adelante.
+            </StyledTypography>
+
+            <StyledTypography>
               Te voy a compartir mi experiencia usando TDD, los prejuicios que
               tenía al incio así como consejos y tips para que puedas
               beneficiarte y <b>subir tu nivel de seniority rápidamente.</b>
@@ -51,6 +68,66 @@ const TestDrivenDevelopment = ({ data, location }) => {
               cuerpo cada vez que veo los tests que pasan en la terminal. Espero
               que pronto este sea tu caso también.
             </StyledTypography>
+
+            <StyledTypography>
+              Pero ¿Cómo aplicar TDD? ¿En qué consiste? Te voy a explicar el
+              flujo de desarrollo a continuación.
+            </StyledTypography>
+
+            <Typography variant="h5" component="p">
+              Ciclo Red, Green, Refactor
+            </Typography>
+
+            <StyledTypography>
+              El ciclo de Red, Green, Refactor es la esencia de TDD y consiste
+              en:
+            </StyledTypography>
+
+            <StyledTypography>
+              <span style={{ color: red["A200"] }}>RED:</span> Comenzar creando
+              una prueba automatizada que falle de un inicio. Por lo común, una
+              prueba que falla tiene un color rojo en los tests runners.
+            </StyledTypography>
+
+            <StyledTypography>
+              <span style={{ color: green["A200"] }}>GREEN:</span> Hacer lo
+              mínimo necesario para que la prueba pase. Por lo común, una prueba
+              que pasa tiene un color verde en un test runner.
+            </StyledTypography>
+
+            <StyledTypography>
+              REFACTOR: Aplicar técnicas de refactor y buenas prácticas en el
+              código creado hasta ahora. Principios SOLID u otros, por ejemplo.
+            </StyledTypography>
+
+            <StyledTypography>
+              Puedes ver un ejemplo de TDD en el siguiente vídeo de menos de 3
+              minutos.
+            </StyledTypography>
+
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <Typography variant="h4" component="h1" gutterBottom>
+                  Test Driven Development con ejemplos.
+                </Typography>
+                <Typography gutterBottom>
+                  Debajo tendrás acceso a diferentes tutoriales y recursos que
+                  puedes usar para aprender a usar TDD con una tecnología en
+                  particular.
+                </Typography>
+              </Grid>
+
+              {tddTutorials.map(({ title, description, url }) => (
+                <Grid item xs={12} key={title}>
+                  <Typography variant="h6" component="h3" color="primary">
+                    <Link color="inherit" href={url} target="_blank">
+                      - {title}
+                    </Link>
+                  </Typography>
+                  <StyledTypography>{description}</StyledTypography>
+                </Grid>
+              ))}
+            </Grid>
 
             <Typography variant="h4" component="h1" gutterBottom>
               ¿Cuáles son las Ventajas de Test Driven Development?
@@ -111,7 +188,7 @@ const TestDrivenDevelopment = ({ data, location }) => {
             </StyledTypography>
 
             <StyledTypography>
-              De lo anterior, lo únuco que tú como desarrollador sí puedes
+              De lo anterior, lo único que tú como desarrollador sí puedes
               controlar, es tu trabajo.
             </StyledTypography>
 
@@ -143,9 +220,8 @@ const TestDrivenDevelopment = ({ data, location }) => {
             <StyledTypography>
               Y es que todo el ciclo consiste en ir creando fragmentos de código
               que resuelven una necesidad (pruebas automatizadas en base a
-              criterios de aceptación) y asegurándonos de que está bien
-              desarrollado (aplicando principios como SOLID, YAGNI, KISS, DRY,
-              etc).
+              funcionalidad) y asegurándonos de que está bien desarrollado
+              (aplicando principios como SOLID, YAGNI, KISS, DRY, etc).
             </StyledTypography>
 
             <StyledTypography>
@@ -205,37 +281,171 @@ const TestDrivenDevelopment = ({ data, location }) => {
 
             <StyledTypography>
               La verdad es que me siento muy bien cuando voy creando las
-              pruebas, hago que pasen, y hago que el programa haga lo que tiene
-              que hacer.
+              pruebas, hago que pasen, mejoro el código constantemente y tengo
+              garantía de que el programa hace lo que tiene que hacer.
             </StyledTypography>
 
-            <Grid container>
-              <Grid item xs={12}>
-                <Typography variant="h4" component="h1" gutterBottom>
-                  Ejemplos con diferentes lenguajes y frameworks de programación
-                </Typography>
-              </Grid>
+            <Typography variant="h4" component="h1" gutterBottom>
+              Técnicas y estrategias
+            </Typography>
 
-              <Grid item xs={4}>
-                <Typography>Javascript</Typography>
-              </Grid>
+            <StyledTypography>
+              En el libro de{" "}
+              <a href="https://amzn.to/3zlL8Ss">
+                Test Driven Development By Example
+              </a>{" "}
+              del autor Kent Beck (lectura recomendada), nos comparte de
+              estrategias para implementar TDD de una manera más rápida y
+              estructurada.
+            </StyledTypography>
 
-              <Grid item xs={4}>
-                <Typography>React JS</Typography>
-              </Grid>
+            <Typography variant="h5" component="p">
+              Implementación obvia
+            </Typography>
 
-              <Grid item xs={4}>
-                <Typography>Node JS y Express</Typography>
-              </Grid>
+            <StyledTypography>
+              Como su nombre lo indica, la implementación obvia es hacer que tus
+              pruebas pasen correctamente haciendo la implementación más simple
+              y que pueda lograr que pasen otros tests derivados si los agregas.
+            </StyledTypography>
 
-              <Grid item xs={4}>
-                <Typography>Php y Laravel</Typography>
-              </Grid>
+            <StyledTypography>
+              Por ejemplo, una función que sume dos números, la implementación
+              obvia es retornar n1 + n2, y no importa cuántas pruebas hagas
+              pasando diferentes números a la función, siempre van a pasar.
+            </StyledTypography>
 
-              <Grid item xs={4}>
-                <Typography>Python y Django</Typography>
-              </Grid>
-            </Grid>
+            <Typography variant="h5" component="p">
+              Implementación falsa.
+            </Typography>
+
+            <StyledTypography>
+              La técnica de implementación falsa consiste en hacer que la prueba
+              inicial pase con éxito por medio de un "fake" o respuesta
+              "hardcodeada", llevando así el concepto de lo mínimo posible a su
+              máxima expresión.
+            </StyledTypography>
+
+            <StyledTypography>
+              Es recomendable aplicarla cuando en un inicio no puedes hacer la
+              implementación obvia.
+            </StyledTypography>
+
+            <Typography variant="h5" component="p">
+              Triangulación.
+            </Typography>
+
+            <StyledTypography>
+              Esta técnica consiste en ir aplicando fakes que satisfagan las
+              pruebas, y conforme vayas agregando más pruebas, vas evolucionando
+              tu implementación de estar usando fakes, a hacer la implementación
+              real y satisfactoria.
+            </StyledTypography>
+
+            <StyledTypography>
+              Es recomendada cuando no tienes ni idea de cómo vas a resolver el
+              problema en la etapa inicial de tus tests.
+            </StyledTypography>
+
+            <StyledTypography>
+              Por ejemplo, si haces una función que te retorne la suma de dos
+              números, entonces la implementación obvia es hacer que la función
+              retorne n1 + n2.
+            </StyledTypography>
+
+            <StyledTypography>
+              Pero si haces una función que te retorne un cálculo algebraico
+              complejo que no estás familiarizado del todo, probablemente sea
+              buena idea comenzar retornando un valor fake "hardcodeado" e ir
+              iterando con un set de pruebas diferentes en los que dados ciertos
+              inputs a la función
+            </StyledTypography>
+
+            <Typography variant="h4" component="h1" gutterBottom>
+              TDD y metodologías ágiles como Scrum
+            </Typography>
+
+            <StyledTypography>
+              TDD hace mucha armonía con las metodologías ágiles como Scrum
+              porque ambos se alinean en el desarrollo iterativo y progresivo de
+              software en base a requisitos establecidos y un feedback rápido y
+              constante.
+            </StyledTypography>
+
+            <StyledTypography>
+              SCRUM es conocido como un marco de trabajo para gestionar
+              proyectos de software, fuera del ámbito técnico. Es aquí donde lo
+              complementamos con Test Driven.
+            </StyledTypography>
+
+            <StyledTypography>
+              La única constante en un proyecto es el cambio. Hay que asumirlo y
+              estar listos para abrazarlo cuando llegue con su respectiva
+              negociación y no sentir ansiedad o estrés.
+            </StyledTypography>
+
+            <StyledTypography>
+              Para que el flujo de desarrollo funcione correctamente, tenemos
+              que tener historias de usuario bien hechas (aplicando las "3 C"
+              por ejemplo), con criterios de aceptación bien definidos y las
+              estimaciones de los equipos.
+            </StyledTypography>
+
+            <StyledTypography>
+              Si para el momento en el que vas a codear no tienes una imagen
+              completa de lo que la historia de usuario debe tener, o si los
+              criterios de aceptación son muy ambiguos, entonces por más buenas
+              prácticas que apliques en tu código con TDD, de poco va a servir
+              porque tu código no vas a estar resolviendo el problema real que
+              deberías resolver (que quizá ni siquiera nadie sepa aún cuál es).
+            </StyledTypography>
+
+            <Typography variant="h4" component="h1" gutterBottom>
+              TDD VS BDD
+            </Typography>
+
+            <StyledTypography>
+              BDD o Behauvior Driven Development por sus siglas en inglés, es
+              una variación de TDD cuya diferencia radica en usar un lenguaje
+              común (Given, When, Then) para personas técnicas y no técnicas del
+              equipo y diseñando las pruebas en base al mismo.
+            </StyledTypography>
+
+            <StyledTypography>
+              Para este punto, las pruebas están orientadas al usuario y su
+              comportamiento en el sistema en lugar de la funcionalidad del
+              sistema por sí mismo.
+            </StyledTypography>
+
+            <Typography variant="h4" component="h1" gutterBottom>
+              TDD VS ATDD
+            </Typography>
+
+            <StyledTypography>
+              ATDD o Acceptance Test Driven Development por sus siglas en
+              inglés, es una variación de TDD cuya diferencia radica en hacer
+              las pruebas automatizadas usando los criterios de aceptación de
+              manera explícita.
+            </StyledTypography>
+
+            <StyledTypography>
+              Para ello se necesita practicar una metodología ágil de manera
+              correcta, lo que conlleva a tener una colaboración de calidad en
+              el equipo.
+            </StyledTypography>
+
+            <StyledTypography>
+              El proceso consiste en implementar las ceremonias ágiles
+              correspondientes de la metodología ágil en cuestión, y una vez que
+              el equipo tiene claro los criterios de aceptación, diseñar las
+              pruebas en base a los mismos.
+            </StyledTypography>
+
+            <StyledTypography>
+              Es común que este tipo de pruebas los haga un QA (Quality
+              Assurance) pero no está restringido necesariamente a un rol en
+              particular del equipo de desarrollo.
+            </StyledTypography>
 
             <Typography variant="h4" component="h1" gutterBottom>
               Mitos y conceptos erróneos
@@ -416,168 +626,6 @@ const TestDrivenDevelopment = ({ data, location }) => {
 
             <StyledTypography>
               Haz un favor a tu YO del futuro, te lo agradecerá.
-            </StyledTypography>
-
-            <Typography variant="h4" component="h1" gutterBottom>
-              Técnicas y estrategias
-            </Typography>
-
-            <StyledTypography>
-              En el libro de{" "}
-              <a href="https://amzn.to/3zlL8Ss">
-                Test Driven Development By Example
-              </a>{" "}
-              del autor Kent Beck (lectura recomendada), nos comparte de
-              estrategias para implementar TDD de una manera más rápida y
-              estructurada.
-            </StyledTypography>
-
-            <Typography variant="h5" component="p">
-              Implementación obvia
-            </Typography>
-
-            <StyledTypography>
-              Como su nombre lo indica, la implementación obvia es hacer que tus
-              pruebas pasen correctamente haciendo la implementación más simple
-              y que pueda lograr que pasen otros tests derivados si los agregas.
-            </StyledTypography>
-
-            <StyledTypography>
-              Por ejemplo, una función que sume dos números, la implementación
-              obvia es retornar n1 + n2, y no importa cuántas pruebas hagas
-              pasando diferentes números a la función, siempre van a pasar.
-            </StyledTypography>
-
-            <Typography variant="h5" component="p">
-              Implementación falsa.
-            </Typography>
-
-            <StyledTypography>
-              La técnica de implementación falsa consiste en hacer que la prueba
-              inicial pase con éxito por medio de un "fake" o respuesta
-              "hardcodeada", llevando así el concepto de lo mínimo posible a su
-              máxima expresión.
-            </StyledTypography>
-
-            <StyledTypography>
-              Es recomendable aplicarla cuando en un inicio no puedes hacer la
-              implementación obvia.
-            </StyledTypography>
-
-            <Typography variant="h5" component="p">
-              Triangulación.
-            </Typography>
-
-            <StyledTypography>
-              Esta técnica consiste en ir aplicando fakes que satisfagan las
-              pruebas, y conforme vayas agregando más pruebas, vas evolucionando
-              tu implementación de estar usando fakes, a hacer la implementación
-              real y satisfactoria.
-            </StyledTypography>
-
-            <StyledTypography>
-              Es recomendada cuando no tienes ni idea de cómo vas a resolver el
-              problema en la etapa inicial de tus tests.
-            </StyledTypography>
-
-            <StyledTypography>
-              Por ejemplo, si haces una función que te retorne la suma de dos
-              números, entonces la implementación obvia es hacer que la función
-              retorne n1 + n2.
-            </StyledTypography>
-
-            <StyledTypography>
-              Pero si haces una función que te retorne un cálculo algebraico
-              complejo que no estás familiarizado del todo, probablemente sea
-              buena idea comenzar retornando un valor fake "hardcodeado" e ir
-              iterando con un set de pruebas diferentes en los que dados ciertos
-              inputs a la función
-            </StyledTypography>
-
-            <Typography variant="h4" component="h1" gutterBottom>
-              TDD y metodologías ágiles como Scrum
-            </Typography>
-
-            <StyledTypography>
-              TDD hace mucha armonía con las metodologías ágiles como Scrum
-              porque ambos se alinean en el desarrollo iterativo y progresivo de
-              software en base a requisitos establecidos y un feedback rápido y
-              constante.
-            </StyledTypography>
-
-            <StyledTypography>
-              SCRUM es conocido como un marco de trabajo para gestionar
-              proyectos de software, fuera del ámbito técnico. Es aquí donde lo
-              complementamos con Test Driven.
-            </StyledTypography>
-
-            <StyledTypography>
-              La única constante en un proyecto es el cambio. Hay que asumirlo y
-              estar listos para abrazarlo cuando llegue con su respectiva
-              negociación y no sentir ansiedad o estrés.
-            </StyledTypography>
-
-            <StyledTypography>
-              Para que el flujo de desarrollo funcione correctamente, tenemos
-              que tener historias de usuario bien hechas (aplicando las "3 C"
-              por ejemplo), con criterios de aceptación bien definidos y las
-              estimaciones de los equipos.
-            </StyledTypography>
-
-            <StyledTypography>
-              Si para el momento en el que vas a codear no tienes una imagen
-              completa de lo que la historia de usuario debe tener, o si los
-              criterios de aceptación son muy ambiguos, entonces por más buenas
-              prácticas que apliques en tu código con TDD, de poco va a servir
-              porque tu código no vas a estar resolviendo el problema real que
-              deberías resolver (que quizá ni siquiera nadie sepa aún cuál es).
-            </StyledTypography>
-
-            <Typography variant="h4" component="h1" gutterBottom>
-              TDD VS BDD
-            </Typography>
-
-            <StyledTypography>
-              BDD o Behauvior Driven Development por sus siglas en inglés, es
-              una variación de TDD cuya diferencia radica en usar un lenguaje
-              común (Given, When, Then) para personas técnicas y no técnicas del
-              equipo y diseñando las pruebas en base al mismo.
-            </StyledTypography>
-
-            <StyledTypography>
-              Para este punto, las pruebas están orientadas al usuario y su
-              comportamiento en el sistema en lugar de la funcionalidad del
-              sistema por sí mismo.
-            </StyledTypography>
-
-            <Typography variant="h4" component="h1" gutterBottom>
-              TDD VS ATDD
-            </Typography>
-
-            <StyledTypography>
-              ATDD o Acceptance Test Driven Development por sus siglas en
-              inglés, es una variación de TDD cuya diferencia radica en hacer
-              las pruebas automatizadas usando los criterios de aceptación de
-              manera explícita.
-            </StyledTypography>
-
-            <StyledTypography>
-              Para ello se necesita practicar una metodología ágil de manera
-              correcta, lo que conlleva a tener una colaboración de calidad en
-              el equipo.
-            </StyledTypography>
-
-            <StyledTypography>
-              El proceso consiste en implementar las ceremonias ágiles
-              correspondientes de la metodología ágil en cuestión, y una vez que
-              el equipo tiene claro los criterios de aceptación, diseñar las
-              pruebas en base a los mismos.
-            </StyledTypography>
-
-            <StyledTypography>
-              Es común que este tipo de pruebas los haga un QA (Quality
-              Assurance) pero no está restringido necesariamente a un rol en
-              particular del equipo de desarrollo.
             </StyledTypography>
           </Grid>
         </Grid>
