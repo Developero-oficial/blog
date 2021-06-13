@@ -9,9 +9,11 @@ import { withStyles } from "@material-ui/core/styles"
 import red from "@material-ui/core/colors/red"
 import green from "@material-ui/core/colors/green"
 import Link from "@material-ui/core/Link"
+import Box from "@material-ui/core/Box"
 
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
+import { Bio } from "../components/bio"
 
 const tddTutorials = [
   {
@@ -41,6 +43,10 @@ const TestDrivenDevelopment = ({ data, location }) => {
             <Typography variant="h4" component="h1" gutterBottom>
               ¿Qué es Test Driven Development o Desarrollo dirigido por pruebas?
             </Typography>
+
+            <Box my={2}>
+              <Bio />
+            </Box>
 
             <StyledTypography>
               Test Driven Development o desarrollo dirigido por pruebas es una
