@@ -6,8 +6,6 @@ import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
 import Typography from "@material-ui/core/Typography"
 import { withStyles } from "@material-ui/core/styles"
-import red from "@material-ui/core/colors/red"
-import green from "@material-ui/core/colors/green"
 import Link from "@material-ui/core/Link"
 import Box from "@material-ui/core/Box"
 
@@ -102,15 +100,15 @@ const TestDrivenDevelopment = ({ data, location }) => {
             </StyledTypography>
 
             <StyledTypography>
-              <span style={{ color: red["A200"] }}>RED:</span> Comenzar creando
+              <span style={{ color: "#b71c1c" }}>RED:</span> Comenzar creando
               una prueba automatizada que falle de un inicio. Por lo común, una
               prueba que falla tiene un color rojo en los tests runners.
             </StyledTypography>
 
             <StyledTypography>
-              <span style={{ color: green["A200"] }}>GREEN:</span> Hacer lo
-              mínimo necesario para que la prueba pase. Por lo común, una prueba
-              que pasa tiene un color verde en un test runner.
+              <span style={{ color: "#33691e" }}>GREEN:</span> Hacer lo mínimo
+              necesario para que la prueba pase. Por lo común, una prueba que
+              pasa tiene un color verde en un test runner.
             </StyledTypography>
 
             <StyledTypography>
@@ -137,7 +135,7 @@ const TestDrivenDevelopment = ({ data, location }) => {
 
               {tddTutorials.map(({ title, description, url }) => (
                 <Grid item xs={12} key={title}>
-                  <Typography variant="h6" component="h3" color="primary">
+                  <Typography variant="h6" component="h2" color="primary">
                     <Link color="inherit" href={url} target="_blank">
                       - {title}
                     </Link>
