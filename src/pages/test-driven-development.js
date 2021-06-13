@@ -14,6 +14,7 @@ import Box from "@material-ui/core/Box"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
 import { Bio } from "../components/bio"
+import coverImg from "../../static/tdd-flow.svg"
 
 const tddTutorials = [
   {
@@ -47,6 +48,17 @@ const TestDrivenDevelopment = ({ data, location }) => {
             <Box my={2}>
               <Bio />
             </Box>
+
+            <img
+              styles={{
+                borderRadius: 5,
+                width: "100%",
+                height: "auto",
+                maxWidth: "320px",
+              }}
+              src={coverImg}
+              alt="desarrollo dirigido por pruebas flujo"
+            />
 
             <StyledTypography>
               Test Driven Development o desarrollo dirigido por pruebas es una
