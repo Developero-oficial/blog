@@ -32,7 +32,7 @@ const Bio = () => {
   const { author } = data.site.siteMetadata
   return (
     <Grid container>
-      <Grid item xs={1}>
+      <Grid item xs={2} md={1}>
         <img
           src={picImg}
           alt={author.name}
@@ -46,7 +46,8 @@ const Bio = () => {
       </Grid>
       <Grid
         item
-        xs={10}
+        xs={9}
+        md={10}
         style={{
           display: "flex",
           alignItems: "center",
