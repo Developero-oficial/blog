@@ -88,7 +88,7 @@ const NavBar = ({ location, width }) => {
       className={classes.toolbar}
       aria-label="menú de navegación"
     >
-      <Container maxWidth="md">
+      <Container>
         <Grid
           container
           alignItems="center"

@@ -14,7 +14,7 @@ deckDeckGoHighlightElement()
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
-  const { title, description, social, siteUrl } = data.site.siteMetadata
+  const { siteUrl } = data.site.siteMetadata
   const { previous, next, slug } = pageContext
 
   const socialUrl = `${siteUrl}/${slug}`
@@ -27,12 +27,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         img={post.frontmatter.coverImage.publicURL}
         url={socialUrl}
       />
-      <Layout
-        location={location}
-        title={title}
-        description={description}
-        social={social}
-      >
+      <Layout location={location}>
         <Container maxWidth="sm">
           <Grid container justify="center" spacing={4}>
             <Grid item xs={12}>

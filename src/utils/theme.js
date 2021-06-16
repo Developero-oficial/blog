@@ -9,7 +9,6 @@ export const theme = createMuiTheme({
   typography: {
     body1: {
       fontSize: 21,
-      fontFamily: 'charter, Georgia, Cambria, "Times New Roman", Times, serif',
     },
     h4: {
       margin: "42px 0 7px 0",
